@@ -24,6 +24,7 @@ class AuthController extends BaseController
             return redirect()->to(base_url('/'));
         }
         $session->cliente = $cliente;
-        return 'Bienvenido' . $cliente->cl_nombre;
+        $valor = $cliente->cl_nombre . ' ' . $cliente->cl_apaterno;
+        return 'Bienvenido ' . $valor;
     }
 }
