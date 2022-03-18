@@ -1,0 +1,42 @@
+CRITICAL - 2022-03-18 17:13:20 --> Class "App\Models\ClienteModel" not found
+#0 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-03-18 17:13:48 --> Class "App\Models\ClienteModel" not found
+#0 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-03-18 17:15:38 --> Class "App\Models\ClienteModel" not found
+#0 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-03-18 17:17:05 --> Class "App\Models\ClienteModel" not found
+#0 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-03-18 17:18:37 --> Class "App\Models\ClienteModel" not found
+#0 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-03-18 17:23:11 --> Class "App\Models\ClienteModel" not found
+#0 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-03-18 17:23:47 --> Class "App\Models\ClienteModel" not found
+#0 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
