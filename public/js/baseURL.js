@@ -1,0 +1,1 @@
+var base_URL = 'http://localhost/lasBorregas/public/';

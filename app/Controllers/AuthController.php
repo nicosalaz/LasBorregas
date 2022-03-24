@@ -24,7 +24,11 @@ class AuthController extends BaseController
             return redirect()->to(base_url('/'));
         }
         $session->cliente = $cliente;
-        $valor = $cliente->cl_nombre . ' ' . $cliente->cl_apaterno;
-        return 'Bienvenido ' . $valor;
+        return view('Pages/head');
+    }
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to(base_url('/'));
     }
 }
