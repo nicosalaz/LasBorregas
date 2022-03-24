@@ -203,3 +203,72 @@ CRITICAL - 2022-03-23 19:04:50 --> Cannot delete or update a parent row: a forei
 #7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+ERROR - 2022-03-23 23:00:43 --> Unknown column 'cliente.deleted_at' in 'where clause'
+CRITICAL - 2022-03-23 23:00:43 --> Unknown column 'cliente.deleted_at' in 'where clause'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lasBorregas\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lasBorregas\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\lasBorregas\app\Models\ClientesModel.php(18): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\lasBorregas\app\Controllers\AuthController.php(16): App\Models\ClientesModel->obtenerCliente('omar')
+#8 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#9 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#10 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2022-03-23 23:01:33 --> Invalid file: Pages/head.php
+#0 C:\xampp\htdocs\lasBorregas\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Pages/head.php')
+#1 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/head', Array, true)
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\AuthController.php(27): view('Pages/head')
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-23 23:02:20 --> Invalid file: Pages/head.php
+#0 C:\xampp\htdocs\lasBorregas\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Pages/head.php')
+#1 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/head', Array, true)
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\AuthController.php(27): view('Pages/head')
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-23 23:06:10 --> Call to undefined method stdClass::getResult()
+#0 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 {main}
+CRITICAL - 2022-03-23 23:19:12 --> Undefined property: CodeIgniter\Database\MySQLi\Result::$contrasena
+#0 C:\xampp\htdocs\lasBorregas\app\Controllers\AuthController.php(22): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 22)
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-03-23 23:25:57 --> Unknown column 'omar' in 'where clause'
+CRITICAL - 2022-03-23 23:25:57 --> Unknown column 'omar' in 'where clause'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT * FROM c...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT * FROM c...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT * FROM c...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\ClientesModel.php(19): CodeIgniter\Database\BaseConnection->query('SELECT * FROM c...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\AuthController.php(16): App\Models\ClientesModel->obtenerCliente('omar')
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\AuthController->login()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\AuthController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-03-23 23:40:50 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3
+CRITICAL - 2022-03-23 23:40:50 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 3
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE cliente ...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE cliente ...')
+#2 C:\xampp\htdocs\lasBorregas\app\Models\ClientesModel.php(28): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE cliente ...')
+#3 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(44): App\Models\ClientesModel->deleteCliente('5')
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->deleteCliente('5')
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

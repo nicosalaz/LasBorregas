@@ -11,7 +11,12 @@ class ClientesModel extends Model
     protected $useAutoIncrement = true;
     protected $returnType        = 'object'; #EL TIPO DE RETORNO QUE TIENE
     protected $useTimestamps     = false; # NO RELLENA POR DEFECTO LOS NULOS
-    protected $useSoftDeletes   = true;
+    protected $useSoftDeletes   = false;
+    protected $allowedFields = [
+        'cl_nombre', 'cl_apaterno', 'cl_amaterno', 'cl_calle', 'cl_numb',
+        'cl_codpostal', 'cl_colonia', 'cl_lugar', 'cl_municipio', 'cl_telefono',
+        'estado', 'usuario', 'contrasena'
+    ];
 
     public function obtenerCliente($usuario)
     {
@@ -22,9 +27,10 @@ class ClientesModel extends Model
     {
         $db = db_connect(); // * Conectarse ala BD
 
-        $query = $db->query('UPDATE cliente 
-                            SET estado = 0 
-                            WHERE id_cliente = ' . $id); // * Ejecuta la consulta
-        return $query;
+        $query = 'UPDATE cliente 
+                    SET estado = 0 
+                    WHERE id_cliente = ' . $id; // * Ejecuta la consulta
+        $result = $db->simpleQuery($query);
+        return $result;
     }
 }

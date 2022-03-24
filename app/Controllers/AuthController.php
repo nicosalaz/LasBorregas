@@ -24,7 +24,7 @@ class AuthController extends BaseController
             return redirect()->to(base_url('/'));
         }
         $session->cliente = $cliente;
-        return view('Pages/head');
+        return view('Pages/admin');
     }
     public function logout()
     {

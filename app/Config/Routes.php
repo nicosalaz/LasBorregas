@@ -31,12 +31,19 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
+
+// INDEX
 $routes->get('/', 'Home::index');
+//LOGICA DE LOGIN Y LOGOUT
 $routes->post('/auth/login', 'AuthController::login');
 $routes->get('/auth/logout', 'AuthController::logout');
+//LOGICA DE CLIENTES
 $routes->get('/clientes', 'ApiController::readClientes');
 $routes->get('/clientes/eliminar/(:num)', 'ApiController::deleteCliente/$1');
+$routes->post('/clientes/agregar', 'ApiController::addCliente');
+// LAS DEMAS RUTAS QUE SE CREEN
 $routes->get('/vistas/(:any)', 'Home::view/$1');
+$routes->get('/register/(:any)', 'Home::viewRegister/$1');
 
 /*
  * --------------------------------------------------------------------

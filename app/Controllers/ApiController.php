@@ -41,8 +41,37 @@ class ApiController extends BaseController
     public function deleteCliente($id)
     {
         $clienteModel = new ClientesModel();
-        $clienteModel->deleteCliente($id);
-        session()->setFlashdata("success", "Eliminado");
+        $result = $clienteModel->deleteCliente($id);
+        if ($result) {
+            session()->setFlashdata("success", 'Eliminado');
+        } else {
+            session()->setFlashdata("error", "No se pudo eliminar");
+        }
+        return redirect()->to(base_url('/clientes'));
+    }
+    public function addCliente()
+    {
+        $clienteModel = new ClientesModel();
+        $data = [
+            'cl_nombre' => $this->request->getPost("nombre"),
+            'cl_apaterno' => $this->request->getPost("apaterno"),
+            'cl_amaterno' => $this->request->getPost("amaterno"),
+            'cl_calle' => $this->request->getPost("calle"),
+            'cl_numb' => $this->request->getPost("numb"),
+            'cl_codpostal' => $this->request->getPost("codpostal"),
+            'cl_colonia' => $this->request->getPost("colonia"),
+            'cl_lugar' => $this->request->getPost("lugar"),
+            'cl_municipio' => $this->request->getPost("municipio"),
+            'cl_telefono' => $this->request->getPost("telefono"),
+            'estado' => 1,
+            'usuario' => $this->request->getPost("usuario"),
+            'contrasena' => $this->request->getPost("contrasena")
+        ];
+        if ($clienteModel->insert($data)) {
+            session()->setFlashdata("success", 'Agregado');
+        } else {
+            session()->setFlashdata("error", "No se pudo eliminar");
+        }
         return redirect()->to(base_url('/clientes'));
     }
 }

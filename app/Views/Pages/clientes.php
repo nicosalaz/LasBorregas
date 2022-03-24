@@ -4,7 +4,7 @@
 
 <div class="twoHeader">
     <h4>Tabla clientes</h4>
-    <button class="btn btn-primary">Agregar Cliente</button>
+    <a href="<?php echo base_url('/vistas/addClientes'); ?>"><button class="btn btn-primary">Agregar Cliente</button></a>
 </div>
 <table class="table table-hover" id="tablaClientes" name="tablaClientes">
     <thead>
@@ -29,9 +29,7 @@
                 <td> <?php echo $row->usuario ?></td>
                 <td>
                     <a href="<?php echo base_url('/clientes/eliminar/' . $row->id_cliente); ?>"><button class="btn btn-danger">Eliminar</button></a>
-
                     <button class="btn btn-warning">Editar</button>
-
                 </td>
             </tr>
         <?php

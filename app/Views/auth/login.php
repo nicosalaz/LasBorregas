@@ -1,6 +1,7 @@
 <?php echo $this->extend('auth/plantillaLogin'); ?>
-
+<!-- Esto se usa para la herencia de plantillas y simplemente cambiar el cuerpo del HTML-->
 <?php echo $this->section('contenidoForm'); ?>
+<!-- Este componente se creo para las alertas cada vez que se realice una accion -->
 <?php echo $this->include('componentes/alerta'); ?>
 <form action="<?php echo base_url('/auth/login'); ?>" method="post" autocomplete="off">
     <div class="mb-3">
