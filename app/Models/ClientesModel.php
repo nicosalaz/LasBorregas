@@ -20,7 +20,8 @@ class ClientesModel extends Model
 
     public function obtenerCliente($usuario)
     {
-        $cliente = $this->where('usuario', $usuario)->first();
+        $where = "usuario = '" . $usuario . "' AND estado = 1";
+        $cliente = $this->where($where)->first();
         return $cliente;
     }
     public function deleteCliente($id)
@@ -32,5 +33,14 @@ class ClientesModel extends Model
                     WHERE id_cliente = ' . $id; // * Ejecuta la consulta
         $result = $db->simpleQuery($query);
         return $result;
+    }
+    public function editCliente($id)
+    {
+        $db = db_connect(); // * Conectarse ala BD
+
+        $query = 'UPDATE cliente 
+                    SET 
+                     
+                    WHERE id_cliente = ' . $id; // * Ejecuta la consulta
     }
 }

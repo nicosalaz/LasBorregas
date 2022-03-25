@@ -74,4 +74,29 @@ class ApiController extends BaseController
         }
         return redirect()->to(base_url('/clientes'));
     }
+    public function editCliente()
+    {
+        $clienteModel = new ClientesModel();
+        $data = [
+            'cl_nombre' => $this->request->getPost("nombre"),
+            'cl_apaterno' => $this->request->getPost("apaterno"),
+            'cl_amaterno' => $this->request->getPost("amaterno"),
+            'cl_calle' => $this->request->getPost("calle"),
+            'cl_numb' => $this->request->getPost("numb"),
+            'cl_codpostal' => $this->request->getPost("codpostal"),
+            'cl_colonia' => $this->request->getPost("colonia"),
+            'cl_lugar' => $this->request->getPost("lugar"),
+            'cl_municipio' => $this->request->getPost("municipio"),
+            'cl_telefono' => $this->request->getPost("telefono"),
+            'estado' => 1,
+            'usuario' => $this->request->getPost("usuario"),
+            'contrasena' => $this->request->getPost("contrasena")
+        ];
+        if ($clienteModel->update($data)) {
+            session()->setFlashdata("success", 'Actualizacion exitosa');
+        } else {
+            session()->setFlashdata("error", "No se pudo Actualizar");
+        }
+        return redirect()->to(base_url('/clientes'));
+    }
 }
