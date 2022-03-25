@@ -41,6 +41,9 @@ $routes->get('/auth/logout', 'AuthController::logout');
 $routes->get('/clientes', 'ApiController::readClientes');
 $routes->get('/clientes/eliminar/(:num)', 'ApiController::deleteCliente/$1');
 $routes->post('/clientes/agregar', 'ApiController::addCliente');
+$routes->get('/clientes/editar/(:num)', 'ApiController::editPlantilla/$1');
+$routes->post('/clientes/editarCliente/(:num)', 'ApiController::editCliente/$1');
+
 // LAS DEMAS RUTAS QUE SE CREEN
 $routes->get('/vistas/(:any)', 'Home::view/$1');
 $routes->get('/register/(:any)', 'Home::viewRegister/$1');

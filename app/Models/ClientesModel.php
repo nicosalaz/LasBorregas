@@ -34,13 +34,12 @@ class ClientesModel extends Model
         $result = $db->simpleQuery($query);
         return $result;
     }
-    public function editCliente($id)
+    public function getCliente($id)
     {
         $db = db_connect(); // * Conectarse ala BD
 
-        $query = 'UPDATE cliente 
-                    SET 
-                     
-                    WHERE id_cliente = ' . $id; // * Ejecuta la consulta
+        $query = $db->query("SELECT * FROM cliente where id_cliente = " . $id); // * Ejecuta la consulta
+
+        return $query; // * Regresa al modelo el objeto $data[]
     }
 }

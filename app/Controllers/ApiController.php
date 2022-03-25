@@ -74,7 +74,7 @@ class ApiController extends BaseController
         }
         return redirect()->to(base_url('/clientes'));
     }
-    public function editCliente()
+    public function editCliente($id)
     {
         $clienteModel = new ClientesModel();
         $data = [
@@ -92,11 +92,19 @@ class ApiController extends BaseController
             'usuario' => $this->request->getPost("usuario"),
             'contrasena' => $this->request->getPost("contrasena")
         ];
-        if ($clienteModel->update($data)) {
-            session()->setFlashdata("success", 'Actualizacion exitosa');
+        $clienteModel->set($data);
+        $clienteModel->where('id_cliente', $id);
+        if ($clienteModel->update()) {
+            session()->setFlashdata("success", 'Actualización exitosa');
         } else {
             session()->setFlashdata("error", "No se pudo Actualizar");
         }
         return redirect()->to(base_url('/clientes'));
+    }
+    public function editPlantilla($id)
+    {
+        $clienteModel = new ClientesModel();
+        $result['clientes'] = $clienteModel->getCliente($id);
+        return view('Pages/editClientes', $result);
     }
 }
