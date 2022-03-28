@@ -49,16 +49,14 @@ $routes->get('/venta/eliminar/(:num)', 'ApiController::deleteVenta/$1');
 $routes->get('/venta/agregar', 'ApiController::addPlantillaVenta');
 $routes->post('/venta/agregarVenta', 'ApiController::addVentas');
 //LOGICA PARA BLOQUE
-<<<<<<< HEAD
-$routes->get('/bloque','ApiController::readBloque');
+
+$routes->get('/bloque', 'ApiController::readBloque');
 $routes->get('/bloque/eliminar/(:num)', 'ApiController::deleteBloque/$1');
 $routes->post('/bloque/agregar', 'ApiController::addBloque');
-=======
 $routes->get('/bloque', 'ApiController::readBloque');
 $routes->get('/bloque/eliminar/(:num)', 'ApiController::deleteBloque/$1');
 $routes->post('/bloque/agregar', 'ApiController::addBloque');
 
->>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
 // LAS DEMAS RUTAS QUE SE CREEN
 $routes->get('/vistas/(:any)', 'Home::view/$1');
 $routes->get('/register/(:any)', 'Home::viewRegister/$1');
