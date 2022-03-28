@@ -16,4 +16,23 @@ class ApiModel extends Model
 
         return $query; // * Regresa al modelo el objeto $data[]
     }
+    public function getAllVentas()
+    {
+        $db = db_connect(); // * Conectarse ala BD
+
+        $query = $db->query('SELECT * FROM venta where estado = 1'); // * Ejecuta la consulta
+
+        return $query; // * Regresa al modelo el objeto $data[]
+
+    }
+
+    public function getAllBloque()
+    {
+        $db = db_connect(); // * Conectarse ala BD
+
+        $query = $db->query('SELECT * FROM bloque where estado = 1'); // * Ejecuta la consulta
+
+        return $query; // * Regresa al modelo el objeto $data[]
+
+    }
 }

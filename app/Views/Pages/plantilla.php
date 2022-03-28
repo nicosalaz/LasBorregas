@@ -41,8 +41,8 @@
                 <ul class="nav nav-pills">
                     <li class="nav-item"><a href="<?php echo base_url('/vistas/admin'); ?>" class="nav-link" aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/clientes'); ?>" class="nav-link">Clientes</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                    <li class="nav-item"><a href="<?php echo base_url('/venta'); ?>" class="nav-link">Ventas</a></li>
+                    <li class="nav-item"><a href="<?php echo base_url('/bloque'); ?>" class="nav-link">Bloques</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/auth/logout'); ?>" class="nav-link">
                             <?php
                             echo session('cliente')->usuario ?? '';

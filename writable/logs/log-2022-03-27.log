@@ -1,0 +1,63 @@
+CRITICAL - 2022-03-27 20:27:56 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\lasBorregas\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(119): CodeIgniter\Model->__call('getAllVentas', Array)
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-27 20:28:10 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\lasBorregas\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(119): CodeIgniter\Model->__call('getAllVentas', Array)
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-27 20:30:56 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\lasBorregas\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(119): CodeIgniter\Model->__call('getAllVentas', Array)
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-27 20:31:12 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\lasBorregas\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(119): CodeIgniter\Model->__call('getAllVentas', Array)
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-27 20:36:15 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\lasBorregas\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(119): CodeIgniter\Model->__call('getAllVentas', Array)
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-27 20:36:21 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\lasBorregas\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(119): CodeIgniter\Model->__call('getAllVentas', Array)
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-27 20:38:39 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\lasBorregas\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(722): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(119): CodeIgniter\Model->__call('getAllVentas', Array)
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
