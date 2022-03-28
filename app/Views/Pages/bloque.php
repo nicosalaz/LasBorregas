@@ -32,7 +32,8 @@
                 <td> <?php echo $row->blq_existencia ?></td>
                 <td>
                     <a href="<?php echo base_url('/bloque/eliminar/' . $row->id_bloque); ?>"><button class="btn btn-danger">Eliminar</button></a>
-                    <button class="btn btn-warning">Editar</button>
+                    <a href="<?php echo base_url('/bloque/editar/' . $row->id_bloque); ?>"><button class="btn btn-warning">Editar</button></a>
+
                 </td>
             </tr>
         <?php

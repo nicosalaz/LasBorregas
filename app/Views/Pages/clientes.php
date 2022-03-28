@@ -30,10 +30,6 @@
                 <td>
                     <a href="<?php echo base_url('/clientes/eliminar/' . $row->id_cliente); ?>"><button class="btn btn-danger">Eliminar</button></a>
                     <a href="<?php echo base_url('/clientes/editar/' . $row->id_cliente); ?>"><button class="btn btn-warning">Editar</button></a>
-<<<<<<< HEAD
-=======
-
->>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
                 </td>
             </tr>
         <?php

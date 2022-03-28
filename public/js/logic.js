@@ -15,3 +15,17 @@ function validar() {
         }
     }
 }
+function validarAddBloque() {
+    const nombre = document.getElementById('nombre').value;
+    const pUnitario = document.getElementById('pUnitario').value;
+    const pVenta = document.getElementById('pVenta').value;
+    const dimension = document.getElementById('dimension').value;
+    const existencia = document.getElementById('existencia').value;
+    const enviar  = document.getElementById("btn-addBloque");
+    if (nombre.length != 0 && pUnitario.length != 0 && pVenta.length != 0
+        && dimension.length != 0 && existencia.length != 0) {
+        enviar.disabled = false;
+    }else{
+        console.log("faltan campos por llenar");
+    }
+}

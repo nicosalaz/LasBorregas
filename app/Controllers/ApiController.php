@@ -158,23 +158,33 @@ class ApiController extends BaseController
         $clientes = new ApiModel();
         $resultado['clientes'] = $clientes->getAllClientes();
         return view("Pages/addVentas", $resultado);
-        return view("Pages/addVentas", $resultado);
     }
 
-    public function editVenta()
+    public function editVenta($id)
     {
-        $VentasModel = new VentasModel();
+        $ventasModel = new VentasModel();
         $data = [
             'fecha' => $this->request->getPost("fecha"),
             'tipo_venta' => $this->request->getPost("tipo_venta"),
             'estado' => 1
         ];
-        if ($VentasModel->update($data)) {
+        $ventasModel->set($data);
+        $ventasModel->where("id_venta", $id);
+        if ($ventasModel->update()) {
             session()->setFlashdata("success", 'Actualizacion exitosa');
         } else {
             session()->setFlashdata("error", "No se pudo Actualizar");
         }
         return redirect()->to(base_url('/ventas'));
+    }
+    public function editPlantillaVenta($id)
+    {
+        $ventasModel = new VentasModel();
+        $clientes = new ApiModel();
+        $ventasModel->where('id_venta', $id);
+        $resultado['ventas'] = $ventasModel->find();
+        $resultado['clientes'] = $clientes->getAllClientes();
+        return view("Pages/editVenta", $resultado);
     }
     // ===================================INICIO DE BLOQUE=========================================================================
     public function readBloque()
@@ -204,36 +214,44 @@ class ApiController extends BaseController
     {
         $BloqueModel = new BloqueModel();
         $data = [
-            'blq_nombre' => $this->request->getPost("blq_nombre"),
-            'blq_precio_unitario' => $this->request->getPost("blq_precio_unitario"),
-            'blq_precio_venta' => $this->request->getPost("blq_precio_venta"),
-            'blq_tamano' => $this->request->getPost("blq_tamano"),
+            'blq_nombre' => $this->request->getPost("nombre"),
+            'blq_precio_unitario' => $this->request->getPost("pUnitario"),
+            'blq_precio_venta' => $this->request->getPost("pVenta"),
+            'blq_tamano' => $this->request->getPost("dimension"),
             'estado' => 1,
-            'blq_existencia' => $this->request->getPost("blq_existencia")
+            'blq_existencia' => $this->request->getPost("existencia")
         ];
         if ($BloqueModel->insert($data)) {
             session()->setFlashdata("success", 'Agregado');
         } else {
-            session()->setFlashdata("error", "No se pudo eliminar");
+            session()->setFlashdata("error", "No se pudo agregar");
         }
         return redirect()->to(base_url('/bloque'));
     }
-    public function editBloque()
+    public function editBloque($id)
     {
-        $BloqueModel = new BloqueModel();
+        $bloqueModel = new BloqueModel();
         $data = [
-            'blq_nombre' => $this->request->getPost("blq_nombre"),
-            'blq_precio_unitario' => $this->request->getPost("blq_precio_unitario"),
-            'blq_precio_venta' => $this->request->getPost("blq_precio_venta"),
-            'blq_tamano' => $this->request->getPost("blq_tamano"),
+            'blq_nombre' => $this->request->getPost("nombre"),
+            'blq_precio_unitario' => $this->request->getPost("pUnitario"),
+            'blq_precio_venta' => $this->request->getPost("pVenta"),
+            'blq_tamano' => $this->request->getPost("dimension"),
             'estado' => 1,
-            'blq_existencia' => $this->request->getPost("blq_existencia")
+            'blq_existencia' => $this->request->getPost("existencia")
         ];
-        if ($BloqueModel->update($data)) {
+        $bloqueModel->set($data);
+        $bloqueModel->where('id_bloque', $id);
+        if ($bloqueModel->update()) {
             session()->setFlashdata("success", 'Actualizacion exitosa');
         } else {
             session()->setFlashdata("error", "No se pudo Actualizar");
         }
         return redirect()->to(base_url('/bloque'));
+    }
+    public function editPlantillaBloque($id)
+    {
+        $bloques = new BloqueModel();
+        $resultado['bloques'] = $bloques->getBloque($id);
+        return view("Pages/editBloque", $resultado);
     }
 }

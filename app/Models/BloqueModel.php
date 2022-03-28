@@ -13,7 +13,7 @@ class BloqueModel extends Model
     protected $useTimestamps     = false; # NO RELLENA POR DEFECTO LOS NULOS
     protected $useSoftDeletes   = false;
     protected $allowedFields = [
-        'blq_precio_unitario', 'blq_precio_venta', 'blq_tamano', 'estado','blq_existencia'
+        'blq_nombre', 'blq_precio_unitario', 'blq_precio_venta', 'blq_tamano', 'estado', 'blq_existencia'
     ];
 
     public function obtenerBloque($usuario)
@@ -32,13 +32,12 @@ class BloqueModel extends Model
         $result = $db->simpleQuery($query);
         return $result;
     }
-    public function editBloque($id)
+    public function getBloque($id)
     {
         $db = db_connect(); // * Conectarse ala BD
 
-        $query = 'UPDATE bloque 
-                    SET 
-                     
-                    WHERE id_bloque = ' . $id; // * Ejecuta la consulta
+        $query = $db->query("SELECT * FROM bloque where id_bloque = " . $id); // * Ejecuta la consulta
+
+        return $query; // * Regresa al modelo el objeto $data[]
     }
 }

@@ -1,0 +1,43 @@
+<?php echo $this->extend('Pages/plantilla'); ?>
+
+<?php echo $this->section('contenido'); ?>
+<div class="add">
+    <?php foreach ($ventas as $row) { ?>
+        <div class="add-form">
+            <form action="<?php echo base_url('/venta/agregarVenta'); ?>" method="post">
+                <h3>Ingresar Datos de la Venta</h3>
+                <hr>
+                <div class="row g-3">
+                    <div class="col-md-5">
+                        <label for="fecha" class="form-label">Fecha</label>
+                        <input type="date" value="<?php echo $row->fecha ?>" class="form-control" id="fecha" name="fecha" required>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="tipo_venta" class="form-label">Tipo de venta</label>
+                        <Select class="form-select" name="tipo_venta" id="tipo_venta" required>
+                            <option value="" selected><?php echo $row->tipo_venta ?></option>
+                            <option value="Linea">En linea</option>
+                            <option value="Mostrador">Mostrador</option>
+                        </Select>
+                    </div>
+                    <div class="col-md-5">
+                        <label for="fk_id_cliente" class="form-label">Cliente</label>
+                        <select class="form-select" name="fk_id_cliente" id="fk_id_cliente" required>
+                            <?php
+                            foreach ($clientes->getResult() as $row) {
+                            ?>
+                                <option value="<?php echo $row->id_cliente; ?>"><?php echo  $row->cl_nombre . ' ' . $row->cl_apaterno . ' ' . $row->cl_amaterno; ?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                    </div>
+                </div>
+                <div style="margin-top: 20px;">
+                    <button type="submit" id="btn-addVentas" class="btn btn-primary">Registrar Venta</button>
+                </div>
+            </form>
+        <?php } ?>
+        </div>
+</div>
+<?php echo $this->endSection(); ?>

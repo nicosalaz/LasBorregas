@@ -1,0 +1,106 @@
+CRITICAL - 2022-03-28 12:10:37 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\lasBorregas\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(130): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '6')
+#3 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(241): CodeIgniter\BaseModel->find('6')
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantillaBloque('6')
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-28 12:11:43 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\lasBorregas\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(130): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '6')
+#3 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(241): CodeIgniter\BaseModel->find('6')
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantillaBloque('6')
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-28 12:12:18 --> You must set the database table to be used with your query.
+#0 C:\xampp\htdocs\lasBorregas\system\Model.php(545): CodeIgniter\Database\BaseConnection->table(NULL)
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(130): CodeIgniter\Model->builder()
+#2 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '6')
+#3 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(241): CodeIgniter\BaseModel->find('6')
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantillaBloque('6')
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+ERROR - 2022-03-28 12:13:17 --> Unknown column 'bloque.id' in 'where clause'
+CRITICAL - 2022-03-28 12:13:17 --> Unknown column 'bloque.id' in 'where clause'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lasBorregas\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lasBorregas\system\Model.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '6')
+#6 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(241): CodeIgniter\BaseModel->find('6')
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantillaBloque('6')
+#8 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#9 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-03-28 12:16:00 --> Unknown column 'bloque.id' in 'where clause'
+CRITICAL - 2022-03-28 12:16:00 --> Unknown column 'bloque.id' in 'where clause'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lasBorregas\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lasBorregas\system\Model.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '6')
+#6 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(241): CodeIgniter\BaseModel->find('6')
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantillaBloque('6')
+#8 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#9 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-03-28 12:17:40 --> Unknown column 'bloque.id' in 'where clause'
+CRITICAL - 2022-03-28 12:17:40 --> Unknown column 'bloque.id' in 'where clause'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lasBorregas\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lasBorregas\system\Model.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '6')
+#6 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(241): CodeIgniter\BaseModel->find('6')
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantillaBloque('6')
+#8 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#9 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+ERROR - 2022-03-28 12:21:44 --> Unknown column 'bloque.id' in 'where clause'
+CRITICAL - 2022-03-28 12:21:44 --> Unknown column 'bloque.id' in 'where clause'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\lasBorregas\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\lasBorregas\system\Model.php(142): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(523): CodeIgniter\Model->doFind(true, '6')
+#6 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(241): CodeIgniter\BaseModel->find('6')
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantillaBloque('6')
+#8 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#9 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 {main}
+CRITICAL - 2022-03-28 13:04:15 --> Invalid file: Pages/editVentas.php
+#0 C:\xampp\htdocs\lasBorregas\system\View\View.php(198): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('Pages/editVenta...')
+#1 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/editVenta...', Array, true)
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(185): view('Pages/editVenta...', Array)
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantillaVenta('5')
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+CRITICAL - 2022-03-28 13:04:49 --> Undefined variable $clientes
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\editVenta.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/editVenta', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(185): view('Pages/editVenta', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantillaVenta('5')
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

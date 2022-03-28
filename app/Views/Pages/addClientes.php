@@ -73,7 +73,7 @@
             </div>
             <p id="resultado"></p>
             <div style="margin-top: 20px;">
-                <button type="submit" id="btn-addCliente" class="btn btn-primary" disabled="off">Registrar</button>
+                <button type="submit" id="btn-addCliente" class="btn btn-primary" disabled="off">Registrar Cliente</button>
             </div>
         </form>
     </div>
