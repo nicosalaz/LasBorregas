@@ -8,12 +8,14 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="<?php echo base_url('/') ?>/styles/loginStyle.css">
+    <link rel="shortcut icon" href="<?php echo base_url('/') ?>/lasBorregas.ico" type="image/x-icon">
     <title>Login las Borregas</title>
 </head>
 
 <body>
     <style>
+<<<<<<< HEAD
         body {
             display: flex;
             justify-content: center;
@@ -35,6 +37,9 @@
             text-align: center;
             color: aliceblue;
         }
+=======
+
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
     </style>
     <div class="loginContainer">
         <div class="letrero">

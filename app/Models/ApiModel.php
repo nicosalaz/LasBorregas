@@ -16,7 +16,10 @@ class ApiModel extends Model
 
         return $query; // * Regresa al modelo el objeto $data[]
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
     public function getAllVentas()
     {
         $db = db_connect(); // * Conectarse ala BD

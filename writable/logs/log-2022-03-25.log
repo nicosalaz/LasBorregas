@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 CRITICAL - 2022-03-25 00:31:26 --> Undefined variable: clientes
 #0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\venta.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 21, Array)
 #1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
@@ -5,10 +6,20 @@ CRITICAL - 2022-03-25 00:31:26 --> Undefined variable: clientes
 #3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/venta', Array, true)
 #4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(112): view('Pages/venta', Array)
 #5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+=======
+CRITICAL - 2022-03-25 02:02:47 --> Attempt to read property "cl_nombre" on array
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\editClientes.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/editClien...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(107): view('Pages/editClien...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantilla('2')
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
 #6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
 #7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+<<<<<<< HEAD
 CRITICAL - 2022-03-25 00:38:44 --> Undefined variable: ventas
 #0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\venta.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 21, Array)
 #1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
@@ -16,10 +27,20 @@ CRITICAL - 2022-03-25 00:38:44 --> Undefined variable: ventas
 #3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/venta', Array, true)
 #4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(112): view('Pages/venta', Array)
 #5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+=======
+CRITICAL - 2022-03-25 02:03:46 --> Attempt to read property "cl_nombre" on array
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\editClientes.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/editClien...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(107): view('Pages/editClien...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantilla('2')
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
 #6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
 #7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+<<<<<<< HEAD
 CRITICAL - 2022-03-25 00:54:56 --> Undefined variable: ventas
 #0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\venta.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 21, Array)
 #1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
@@ -27,10 +48,20 @@ CRITICAL - 2022-03-25 00:54:56 --> Undefined variable: ventas
 #3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/venta', Array, true)
 #4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(113): view('Pages/venta', Array)
 #5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+=======
+CRITICAL - 2022-03-25 02:03:49 --> Attempt to read property "cl_nombre" on array
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\editClientes.php(13): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 13)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/editClien...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(107): view('Pages/editClien...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantilla('3')
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
 #6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
 #7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+<<<<<<< HEAD
 CRITICAL - 2022-03-25 00:54:57 --> Undefined variable: ventas
 #0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\venta.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 21, Array)
 #1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
@@ -38,10 +69,20 @@ CRITICAL - 2022-03-25 00:54:57 --> Undefined variable: ventas
 #3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/venta', Array, true)
 #4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(113): view('Pages/venta', Array)
 #5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+=======
+CRITICAL - 2022-03-25 02:06:17 --> Undefined variable $Clientes
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\editClientes.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/editClien...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(107): view('Pages/editClien...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantilla('7')
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
 #6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
 #7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+<<<<<<< HEAD
 CRITICAL - 2022-03-25 00:54:57 --> Undefined variable: ventas
 #0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\venta.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 21, Array)
 #1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
@@ -49,10 +90,20 @@ CRITICAL - 2022-03-25 00:54:57 --> Undefined variable: ventas
 #3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/venta', Array, true)
 #4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(113): view('Pages/venta', Array)
 #5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+=======
+CRITICAL - 2022-03-25 02:07:29 --> Undefined property: stdClass::$cl_aparteno
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\editClientes.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 17)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/editClien...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(107): view('Pages/editClien...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editPlantilla('7')
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
 #6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
 #7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #9 {main}
+<<<<<<< HEAD
 CRITICAL - 2022-03-25 00:56:53 --> Undefined variable: ventas
 #0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\venta.php(21): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined varia...', 'C:\\xampp\\htdocs...', 21, Array)
 #1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
@@ -360,10 +411,48 @@ Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo 
 #1 C:\xampp\htdocs\lasBorregas\app\Models\ApiModel.php(34): CodeIgniter\Database\BaseConnection->query('SELECT * FROM b...')
 #2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(167): App\Models\ApiModel->getAllBloque()
 #3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readBloque()
+=======
+CRITICAL - 2022-03-25 02:23:43 --> There is no data to update.
+#0 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\lasBorregas\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(96): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editCliente('7')
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-25 02:24:49 --> There is no data to update.
+#0 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\lasBorregas\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(96): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editCliente('7')
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-25 02:26:29 --> There is no data to update.
+#0 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(1574): CodeIgniter\Database\Exceptions\DataException::forEmptyDataset('update')
+#1 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray(NULL, 'update')
+#2 C:\xampp\htdocs\lasBorregas\system\Model.php(651): CodeIgniter\BaseModel->update(Array, NULL)
+#3 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(96): CodeIgniter\Model->update(Array)
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editCliente('6')
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}
+CRITICAL - 2022-03-25 02:32:18 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+#0 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray('id_cliente = 6', 'update')
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(651): CodeIgniter\BaseModel->update(Array, 'id_cliente = 6')
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(95): CodeIgniter\Model->update(Array, 'id_cliente = 6')
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editCliente('6')
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
 #4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
 #5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #7 {main}
+<<<<<<< HEAD
 ERROR - 2022-03-25 13:07:17 --> Error connecting to the database: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
 CRITICAL - 2022-03-25 13:07:17 --> Unable to connect to the database.
 Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
@@ -371,15 +460,30 @@ Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo 
 #1 C:\xampp\htdocs\lasBorregas\app\Models\ApiModel.php(24): CodeIgniter\Database\BaseConnection->query('SELECT * FROM v...')
 #2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(111): App\Models\ApiModel->getAllVentas()
 #3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readVentas()
+=======
+CRITICAL - 2022-03-25 02:32:52 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+#0 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray('id_cliente = 6', 'update')
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(651): CodeIgniter\BaseModel->update(Array, 'id_cliente = 6')
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(95): CodeIgniter\Model->update(Array, 'id_cliente = 6')
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editCliente('6')
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
 #4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
 #5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
 #7 {main}
+<<<<<<< HEAD
 CRITICAL - 2022-03-25 17:49:14 --> Unclosed '{' on line 22
 #0 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
 #1 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/addVentas', Array, true)
 #2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(149): view('Pages/addVentas', Array)
 #3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addPlantillaVenta()
+=======
+CRITICAL - 2022-03-25 02:32:54 --> CodeIgniter\BaseModel::transformDataToArray(): Return value must be of type array, string returned
+#0 C:\xampp\htdocs\lasBorregas\system\BaseModel.php(832): CodeIgniter\BaseModel->transformDataToArray('id_cliente = 6', 'update')
+#1 C:\xampp\htdocs\lasBorregas\system\Model.php(651): CodeIgniter\BaseModel->update(Array, 'id_cliente = 6')
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(95): CodeIgniter\Model->update(Array, 'id_cliente = 6')
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->editCliente('6')
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
 #4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
 #5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
 #6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()

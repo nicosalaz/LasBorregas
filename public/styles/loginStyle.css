@@ -1,0 +1,21 @@
+body {
+  display: flex;
+  justify-content: center;
+  background-color: blueviolet;
+}
+
+.loginContainer {
+  width: 40vw;
+  height: 30vh;
+  /*background-color: cadetblue;*/
+  margin: 25vh 0px 0px 0px;
+}
+
+.letrero {
+  width: auto;
+  height: 10vh;
+  margin: 0px 0px 0px 0px;
+  justify-content: center;
+  text-align: center;
+  color: aliceblue;
+}

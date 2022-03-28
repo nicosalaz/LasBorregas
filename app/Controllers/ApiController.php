@@ -109,15 +109,23 @@ class ApiController extends BaseController
         $result['clientes'] = $clienteModel->getCliente($id);
         return view('Pages/editClientes', $result);
     }
+<<<<<<< HEAD
     
 // *===================================INICIO DE VENTAS=========================================================================
+=======
+    // *===================================INICIO DE VENTAS=========================================================================
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
     public function readVentas()
     {
         // * Instanciar modelo de la API
         $VentasModel = new ApiModel();
 
         // * manda a llamar la funcion getAllEmpleados(), esta funcion nos regresa el resultado de la consulta y lo guarda en la varaible $empleado
+<<<<<<< HEAD
         $ventas['venta'] = $VentasModel-> getAllVentas();
+=======
+        $ventas['venta'] = $VentasModel->getAllVentas();
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
 
         // * regresar al cliente una respues en formato JSON
         return view("Pages/venta", $ventas);
@@ -155,7 +163,11 @@ class ApiController extends BaseController
     {
         $clientes = new ApiModel();
         $resultado['clientes'] = $clientes->getAllClientes();
+<<<<<<< HEAD
         return view("Pages/addVentas",$resultado);
+=======
+        return view("Pages/addVentas", $resultado);
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
     }
 
     public function editVenta()
@@ -173,6 +185,7 @@ class ApiController extends BaseController
         }
         return redirect()->to(base_url('/ventas'));
     }
+<<<<<<< HEAD
 // *===================================INICIO DE BLOQUE=========================================================================
     public function readBloque()
         {
@@ -197,6 +210,32 @@ class ApiController extends BaseController
             return redirect()->to(base_url('/bloque'));
         }
         public function addBloque()
+=======
+    // *===================================INICIO DE BLOQUE=========================================================================
+    public function readBloque()
+    {
+        // * Instanciar modelo de la API
+        $BloqueModel = new ApiModel();
+
+        // * manda a llamar la funcion getAllEmpleados(), esta funcion nos regresa el resultado de la consulta y lo guarda en la varaible $empleado
+        $bloque['bloque'] = $BloqueModel->getAllBloque();
+
+        // * regresar al cliente una respues en formato JSON
+        return view("Pages/bloque", $bloque);
+    }
+    public function deleteBloque($id)
+    {
+        $BloqueModel = new BloqueModel();
+        $result = $BloqueModel->deleteBloque($id);
+        if ($result) {
+            session()->setFlashdata("success", 'Eliminado');
+        } else {
+            session()->setFlashdata("error", "No se pudo eliminar");
+        }
+        return redirect()->to(base_url('/bloque'));
+    }
+    public function addBloque()
+>>>>>>> ab15dd98e68470dce952c3403dccfc36fd206d8e
     {
         $BloqueModel = new BloqueModel();
         $data = [
