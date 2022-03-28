@@ -29,7 +29,7 @@
                 <td> <?php echo $row->usuario ?></td>
                 <td>
                     <a href="<?php echo base_url('/clientes/eliminar/' . $row->id_cliente); ?>"><button class="btn btn-danger">Eliminar</button></a>
-                    <button class="btn btn-warning">Editar</button>
+                    <a href="<?php echo base_url('/clientes/editar/' . $row->id_cliente); ?>"><button class="btn btn-warning">Editar</button></a>
                 </td>
             </tr>
         <?php

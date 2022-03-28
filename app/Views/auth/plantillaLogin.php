@@ -17,7 +17,7 @@
         body {
             display: flex;
             justify-content: center;
-            background-color: cadetblue;
+            background-color: blueviolet;
         }
 
         .loginContainer {
@@ -33,11 +33,12 @@
             margin: 0px 0px 0px 0px;
             justify-content: center;
             text-align: center;
+            color: aliceblue;
         }
     </style>
     <div class="loginContainer">
         <div class="letrero">
-            <h1>Bloqueria Las Borregas</h1>
+            <h1>Bloquera Las Borregas</h1>
         </div>
         <?php echo $this->renderSection('contenidoForm'); ?>
 

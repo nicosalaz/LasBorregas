@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css" integrity="sha512-10/jx2EXwxxWqCLX/hHth/vu2KY3jCF70dCQB8TSgNjbCVAC/8vai53GfMDrO2Emgwccf2pJqxct9ehpzG+MTw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="<?php echo base_url('/') ?>/styles/styles.css">
+    <link rel="shortcut icon" href="<?php echo base_url('/') ?>/lasBorregas.ico" type="image/x-icon">
     <title>Las Borregas</title>
 </head>
 
@@ -40,8 +41,8 @@
                 <ul class="nav nav-pills">
                     <li class="nav-item"><a href="<?php echo base_url('/vistas/admin'); ?>" class="nav-link" aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/clientes'); ?>" class="nav-link">Clientes</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+                    <li class="nav-item"><a href="<?php echo base_url('/venta'); ?>" class="nav-link">Ventas</a></li>
+                    <li class="nav-item"><a href="<?php echo base_url('/bloque'); ?>" class="nav-link">Bloques</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/auth/logout'); ?>" class="nav-link">
                             <?php
                             echo session('cliente')->usuario ?? '';
@@ -67,7 +68,7 @@
                     <use xlink:href="#bootstrap" />
                 </svg>
             </a>
-            <span class="text-muted">&copy; 2021 Company, Inc</span>
+            <span class="text-muted">&copy; 2021 Borregas.Inc</span>
         </div>
 
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">

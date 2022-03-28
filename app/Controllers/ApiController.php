@@ -4,6 +4,8 @@ namespace App\Controllers;
 
 use App\Models\ApiModel;
 use App\Models\ClientesModel;
+use App\Models\VentasModel;
+use App\Models\BloqueModel;
 use CodeIgniter\Session\Session;
 
 class ApiController extends BaseController
@@ -25,7 +27,7 @@ class ApiController extends BaseController
     // * DELETE = == BORRAR UN REGISTRO EN LA BD
 
 
-
+// *===================================INICIO DE CLIENTES=========================================================================
     // * esta funcion envia todos los empleados 
     public function readClientes()
     {
@@ -74,7 +76,7 @@ class ApiController extends BaseController
         }
         return redirect()->to(base_url('/clientes'));
     }
-    public function editCliente()
+    public function editCliente($id)
     {
         $clienteModel = new ClientesModel();
         $data = [
@@ -92,11 +94,142 @@ class ApiController extends BaseController
             'usuario' => $this->request->getPost("usuario"),
             'contrasena' => $this->request->getPost("contrasena")
         ];
-        if ($clienteModel->update($data)) {
-            session()->setFlashdata("success", 'Actualizacion exitosa');
+        $clienteModel->set($data);
+        $clienteModel->where('id_cliente', $id);
+        if ($clienteModel->update()) {
+            session()->setFlashdata("success", 'Actualización exitosa');
         } else {
             session()->setFlashdata("error", "No se pudo Actualizar");
         }
         return redirect()->to(base_url('/clientes'));
+    }
+    public function editPlantilla($id)
+    {
+        $clienteModel = new ClientesModel();
+        $result['clientes'] = $clienteModel->getCliente($id);
+        return view('Pages/editClientes', $result);
+    }
+    
+// *===================================INICIO DE VENTAS=========================================================================
+    public function readVentas()
+    {
+        // * Instanciar modelo de la API
+        $VentasModel = new ApiModel();
+
+        // * manda a llamar la funcion getAllEmpleados(), esta funcion nos regresa el resultado de la consulta y lo guarda en la varaible $empleado
+        $ventas['venta'] = $VentasModel-> getAllVentas();
+
+        // * regresar al cliente una respues en formato JSON
+        return view("Pages/venta", $ventas);
+    }
+
+    public function deleteVenta($id)
+    {
+        $VentasModel = new VentasModel();
+        $result = $VentasModel->deleteVenta($id);
+        if ($result) {
+            session()->setFlashdata("success", 'Eliminado');
+        } else {
+            session()->setFlashdata("error", "No se pudo eliminar");
+        }
+        return redirect()->to(base_url('/venta'));
+    }
+
+    public function addVentas()
+    {
+        $VentasModel = new VentasModel();
+        $data = [
+            'fk_id_cliente' => $this->request->getPost("fk_id_cliente"),
+            'fecha' => $this->request->getPost("fecha"),
+            'tipo_venta' => $this->request->getPost("tipo_venta"),
+            'estado' => 1
+        ];
+        if ($VentasModel->insert($data)) {
+            session()->setFlashdata("success", 'Agregado');
+        } else {
+            session()->setFlashdata("error", "No se pudo Agregar");
+        }
+        return redirect()->to(base_url('/venta'));
+    }
+    public function addPlantillaVenta()
+    {
+        $clientes = new ApiModel();
+        $resultado['clientes'] = $clientes->getAllClientes();
+        return view("Pages/addVentas",$resultado);
+    }
+
+    public function editVenta()
+    {
+        $VentasModel = new VentasModel();
+        $data = [
+            'fecha' => $this->request->getPost("fecha"),
+            'tipo_venta' => $this->request->getPost("tipo_venta"),
+            'estado' => 1
+        ];
+        if ($VentasModel->update($data)) {
+            session()->setFlashdata("success", 'Actualizacion exitosa');
+        } else {
+            session()->setFlashdata("error", "No se pudo Actualizar");
+        }
+        return redirect()->to(base_url('/ventas'));
+    }
+// *===================================INICIO DE BLOQUE=========================================================================
+    public function readBloque()
+        {
+            // * Instanciar modelo de la API
+            $BloqueModel = new ApiModel();
+
+            // * manda a llamar la funcion getAllEmpleados(), esta funcion nos regresa el resultado de la consulta y lo guarda en la varaible $empleado
+            $bloque['bloque'] = $BloqueModel-> getAllBloque();
+
+            // * regresar al cliente una respues en formato JSON
+            return view("Pages/bloque", $bloque);
+        }
+        public function deleteBloque($id)
+        {
+            $BloqueModel = new BloqueModel();
+            $result = $BloqueModel->deleteBloque($id);
+            if ($result) {
+                session()->setFlashdata("success", 'Eliminado');
+            } else {
+                session()->setFlashdata("error", "No se pudo eliminar");
+            }
+            return redirect()->to(base_url('/bloque'));
+        }
+        public function addBloque()
+    {
+        $BloqueModel = new BloqueModel();
+        $data = [
+            'blq_nombre' => $this->request->getPost("blq_nombre"),
+            'blq_precio_unitario' => $this->request->getPost("blq_precio_unitario"),
+            'blq_precio_venta' => $this->request->getPost("blq_precio_venta"),
+            'blq_tamano' => $this->request->getPost("blq_tamano"),
+            'estado' => 1,
+            'blq_existencia' => $this->request->getPost("blq_existencia")
+        ];
+        if ($BloqueModel->insert($data)) {
+            session()->setFlashdata("success", 'Agregado');
+        } else {
+            session()->setFlashdata("error", "No se pudo eliminar");
+        }
+        return redirect()->to(base_url('/bloque'));
+    }
+    public function editBloque()
+    {
+        $BloqueModel = new BloqueModel();
+        $data = [
+            'blq_nombre' => $this->request->getPost("blq_nombre"),
+            'blq_precio_unitario' => $this->request->getPost("blq_precio_unitario"),
+            'blq_precio_venta' => $this->request->getPost("blq_precio_venta"),
+            'blq_tamano' => $this->request->getPost("blq_tamano"),
+            'estado' => 1,
+            'blq_existencia' => $this->request->getPost("blq_existencia")
+        ];
+        if ($BloqueModel->update($data)) {
+            session()->setFlashdata("success", 'Actualizacion exitosa');
+        } else {
+            session()->setFlashdata("error", "No se pudo Actualizar");
+        }
+        return redirect()->to(base_url('/bloque'));
     }
 }

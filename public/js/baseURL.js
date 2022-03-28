@@ -1,1 +1,1 @@
-var base_URL = 'http://localhost/lasBorregas/public/';
+var base_URL = 'http://localhost:8080/lasBorregas/public/';
