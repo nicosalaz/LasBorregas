@@ -32,13 +32,9 @@ class VentasModel extends Model
         $result = $db->simpleQuery($query);
         return $result;
     }
-    public function editVenta($id)
+    public function clienteDeVenta($id)
     {
-        $db = db_connect(); // * Conectarse ala BD
-
-        $query = 'UPDATE venta 
-                    SET 
-                     
-                    WHERE id_venta = ' . $id; // * Ejecuta la consulta
+        $db = db_connect();
+        $query = "SELECT id_cliente from venta where id_venta = " . $id;
     }
 }

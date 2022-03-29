@@ -184,6 +184,7 @@ class ApiController extends BaseController
         $ventasModel->where('id_venta', $id);
         $resultado['ventas'] = $ventasModel->find();
         $resultado['clientes'] = $clientes->getAllClientes();
+
         return view("Pages/editVenta", $resultado);
     }
     // ===================================INICIO DE BLOQUE=========================================================================

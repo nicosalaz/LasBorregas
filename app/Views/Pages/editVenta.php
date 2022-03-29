@@ -16,18 +16,28 @@
                         <label for="tipo_venta" class="form-label">Tipo de venta</label>
                         <Select class="form-select" name="tipo_venta" id="tipo_venta" required>
                             <option value="" selected><?php echo $row->tipo_venta ?></option>
-                            <option value="Linea">En linea</option>
-                            <option value="Mostrador">Mostrador</option>
+                            <?php if ($row->tipo_venta == "Mostrador") { ?>
+                                <option value="Linea">En linea</option>
+                            <?php } else { ?>
+                                <option value="Mostrador">Mostrador</option>
+                            <?php } ?>
                         </Select>
                     </div>
                     <div class="col-md-5">
                         <label for="fk_id_cliente" class="form-label">Cliente</label>
                         <select class="form-select" name="fk_id_cliente" id="fk_id_cliente" required>
                             <?php
-                            foreach ($clientes->getResult() as $row) {
+                            foreach ($clientes->getResult() as $rowC) {
+                                if ($rowC->id_cliente != $row->fk_id_cliente) {
                             ?>
-                                <option value="<?php echo $row->id_cliente; ?>"><?php echo  $row->cl_nombre . ' ' . $row->cl_apaterno . ' ' . $row->cl_amaterno; ?></option>
+                                    <option value="<?php echo $rowC->id_cliente; ?>"><?php echo  $rowC->cl_nombre . ' ' . $rowC->cl_apaterno . ' ' . $rowC->cl_amaterno; ?></option>
+                                <?php
+                                } else {
+                                ?>
+                                    <option value="<?php echo $rowC->id_cliente; ?>" selected><?php echo  $rowC->cl_nombre . ' ' . $rowC->cl_apaterno . ' ' . $rowC->cl_amaterno; ?></option>
+
                             <?php
+                                }
                             }
                             ?>
                         </select>
