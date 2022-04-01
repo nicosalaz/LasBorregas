@@ -43,6 +43,7 @@ $routes->get('/clientes/eliminar/(:num)', 'ApiController::deleteCliente/$1');
 $routes->post('/clientes/agregar', 'ApiController::addCliente');
 $routes->get('/clientes/editar/(:num)', 'ApiController::editPlantilla/$1');
 $routes->post('/clientes/editarCliente/(:num)', 'ApiController::editCliente/$1');
+$routes->get('/clientes/getVentaCliente/(:num)', 'ApiController::getVentaCliente/$1');
 //LOGICA DE VENTAS
 $routes->get('/venta', 'ApiController::readVentas');
 $routes->get('/venta/eliminar/(:num)', 'ApiController::deleteVenta/$1');

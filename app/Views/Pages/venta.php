@@ -10,6 +10,7 @@
         <tr>
             <th scope="col">ID VENTA</th>
             <th scope="col">ID CLIENTE</th>
+            <th scope="col">NOMBRE</th>
             <th scope="col">FECHA</th>
             <th scope="col">TIPO VENTA</th>
             <th scope="col">ESTADO</th>
@@ -23,6 +24,7 @@
             <tr>
                 <td> <?php echo $row->id_venta ?></td>
                 <td> <?php echo $row->fk_id_cliente ?></td>
+                <td> <?php echo $row->cl_nombre ?></td>
                 <td> <?php echo $row->fecha ?></td>
                 <td> <?php echo $row->tipo_venta ?></td>
                 <td> <?php echo $row->estado ?></td>

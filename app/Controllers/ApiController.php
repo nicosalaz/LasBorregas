@@ -29,6 +29,15 @@ class ApiController extends BaseController
 
     // *===================================INICIO DE CLIENTES=========================================================================
     // * esta funcion envia todos los empleados 
+    /*
+    public function ValidarUsuario($ruta, $data = "")
+    {
+        if (session()->is_null) {
+            return view("auth/login");
+        }else{
+            if
+        }
+    }*/
     public function readClientes()
     {
         // * Instanciar modelo de la API
@@ -109,7 +118,14 @@ class ApiController extends BaseController
         $result['clientes'] = $clienteModel->getCliente($id);
         return view('Pages/editClientes', $result);
     }
-
+    public function getVentaCliente($id)
+    {
+        $ventas = new VentasModel();
+        $ventas->where('fk_id_cliente', $id);
+        $ventas->where('estado', 1);
+        $resultado['ventas'] = $ventas->find();
+        return view("Pages/getVentasCliente", $resultado);
+    }
     // *===================================INICIO DE VENTAS=========================================================================
     // *===================================INICIO DE VENTAS=========================================================================
     public function readVentas()
@@ -118,7 +134,6 @@ class ApiController extends BaseController
         $VentasModel = new ApiModel();
 
         // * manda a llamar la funcion getAllEmpleados(), esta funcion nos regresa el resultado de la consulta y lo guarda en la varaible $empleado
-        $ventas['venta'] = $VentasModel->getAllVentas();
         $ventas['venta'] = $VentasModel->getAllVentas();
 
         // * regresar al cliente una respues en formato JSON
@@ -166,6 +181,7 @@ class ApiController extends BaseController
         $data = [
             'fecha' => $this->request->getPost("fecha"),
             'tipo_venta' => $this->request->getPost("tipo_venta"),
+            'fk_id_cliente' => $this->request->getPost("fk_id_cliente"),
             'estado' => 1
         ];
         $ventasModel->set($data);
@@ -175,7 +191,7 @@ class ApiController extends BaseController
         } else {
             session()->setFlashdata("error", "No se pudo Actualizar");
         }
-        return redirect()->to(base_url('/ventas'));
+        return redirect()->to(base_url('/venta'));
     }
     public function editPlantillaVenta($id)
     {

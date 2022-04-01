@@ -4,7 +4,7 @@
 <div class="add">
     <?php foreach ($ventas as $row) { ?>
         <div class="add-form">
-            <form action="<?php echo base_url('/venta/agregarVenta'); ?>" method="post">
+            <form action="<?php echo base_url('/venta/editarVenta/' . $row->id_venta); ?>" method="post">
                 <h3>Ingresar Datos de la Venta</h3>
                 <hr>
                 <div class="row g-3">
@@ -15,7 +15,7 @@
                     <div class="col-md-5">
                         <label for="tipo_venta" class="form-label">Tipo de venta</label>
                         <Select class="form-select" name="tipo_venta" id="tipo_venta" required>
-                            <option value="" selected><?php echo $row->tipo_venta ?></option>
+                            <option value="<?php echo $row->tipo_venta; ?>" selected><?php echo $row->tipo_venta ?></option>
                             <?php if ($row->tipo_venta == "Mostrador") { ?>
                                 <option value="Linea">En linea</option>
                             <?php } else { ?>
@@ -44,7 +44,7 @@
                     </div>
                 </div>
                 <div style="margin-top: 20px;">
-                    <button type="submit" id="btn-addVentas" class="btn btn-primary">Registrar Venta</button>
+                    <button type="submit" id="btn-addVentas" class="btn btn-primary">Editar Venta</button>
                 </div>
             </form>
         <?php } ?>

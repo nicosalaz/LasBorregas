@@ -20,7 +20,10 @@ class ApiModel extends Model
     {
         $db = db_connect(); // * Conectarse ala BD
 
-        $query = $db->query('SELECT * FROM venta where estado = 1'); // * Ejecuta la consulta
+        $query = $db->query('SELECT * 
+                            FROM venta , cliente 
+                            where cliente.id_cliente = venta.fk_id_cliente
+                            and venta.estado = 1'); // * Ejecuta la consulta
 
         return $query; // * Regresa al modelo el objeto $data[]
 

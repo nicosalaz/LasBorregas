@@ -30,6 +30,7 @@
                 <td>
                     <a href="<?php echo base_url('/clientes/eliminar/' . $row->id_cliente); ?>"><button class="btn btn-danger">Eliminar</button></a>
                     <a href="<?php echo base_url('/clientes/editar/' . $row->id_cliente); ?>"><button class="btn btn-warning">Editar</button></a>
+                    <a href="<?php echo base_url('/clientes/getVentaCliente/' . $row->id_cliente); ?>"><button class="btn btn-info">Mostrar</button></a>
                 </td>
             </tr>
         <?php
