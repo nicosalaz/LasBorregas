@@ -52,5 +52,29 @@ footer {
   border-radius: 15px;
   text-align: center;
 }
-.ventaCliente p {
+.nosotrosInfo{
+  width: 80vw;
+  margin: 10px 10px 10px 0px;
+  border-radius: 15px;
+  text-align: center;
+}
+.form-aumentar{
+  background-color: transparent;
+  width: 50vw;
+  margin: 10px 10px 10px 0px;
+  border-radius: 15px;
+  text-align: center;
+  align-content: center;
+}
+.tableContenido{
+  padding: 30px 0px 0px 0px;
+}
+.seleccion{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.cantidad{
+  display: flex;
+  flex-direction: column;
 }

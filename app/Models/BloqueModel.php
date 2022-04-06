@@ -40,4 +40,20 @@ class BloqueModel extends Model
 
         return $query; // * Regresa al modelo el objeto $data[]
     }
+    public function getBloqueSuma()
+    {
+        $db = db_connect(); // * Conectarse ala BD
+        $sql = "SELECT *,SUM(blq_existencia) as suma
+        FROM bloque
+        GROUP BY blq_tamano;";
+        $query = $db->query($sql);
+        return $query;
+    }
+    public function getSumaBloques($blq_tamano)
+    {
+        $db = db_connect(); // * Conectarse ala BD
+        $sql = "SELECT SUM(blq_existencia) as suma FROM bloque WHERE blq_tamano = '" . $blq_tamano . "'";
+        $query = $db->query($sql);
+        return $query;
+    }
 }

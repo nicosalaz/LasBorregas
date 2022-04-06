@@ -29,3 +29,37 @@ function validarAddBloque() {
         console.log("faltan campos por llenar");
     }
 }
+
+function addContenido() {
+    const listaProductos = document.getElementById('productos');
+    const cantidad = document.getElementById('cantidad').value;
+    const seleccionado = listaProductos.options[listaProductos.selectedIndex].value;
+    let arraySeleccionado = seleccionado.split(",");
+    const msj = arraySeleccionado[0] + " de "+arraySeleccionado[1]
+    //const cantidadTotal = document.getElementById('cantidadTotal').value;
+    //const valorUnidad = document.getElementById('valorUnidad').value
+    const tableBody = document.getElementById('tableBody');
+    console.log(arraySeleccionado);
+    //console.log(cantidad);
+    //console.log(cantidadTotal);
+    if (cantidad < parseInt(arraySeleccionado[3])) {
+        tableBody.innerHTML += "<tr><td>" + msj +"</td>" + "<td>" + cantidad +"</td>"
+                        + "<td>" + parseInt(cantidad) * parseInt(arraySeleccionado[2]) +"</td> </tr>";
+        listaProductos.selectedIndex = 0;
+    }else{
+        alert('cantidad superior a la que existente');
+    }
+    
+}
+
+function validarBtnAddContenido() {
+    const listaProductos = document.getElementById('productos');
+    const seleccionado = listaProductos.options[listaProductos.selectedIndex].text;
+    const cantidad = document.getElementById('cantidad').value;
+    const btnAdd = document.getElementById('btn-addContenido');
+    if (seleccionado.length > 0 && cantidad > 0 ) {
+        btnAdd.disabled = false;
+    }else{
+        btnAdd.disabled = true;
+    }
+}

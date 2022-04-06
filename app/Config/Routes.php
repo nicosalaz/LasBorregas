@@ -57,6 +57,9 @@ $routes->get('/bloque/eliminar/(:num)', 'ApiController::deleteBloque/$1');
 $routes->post('/bloque/agregar', 'ApiController::addBloque');
 $routes->get('/bloque/editar/(:num)', 'ApiController::editPlantillaBloque/$1');
 $routes->post('/bloque/editarBloque/(:num)', 'ApiController::editBloque/$1');
+$routes->get('/bloque/plantillaAumentarExistencia/(:num)', 'ApiController::plantillaAumentarExistencia/$1');
+$routes->post('/bloque/aumentarExistencia/(:num)', 'ApiController::aumentarExistencia/$1');
+
 // LAS DEMAS RUTAS QUE SE CREEN
 $routes->get('/vistas/(:any)', 'Home::view/$1');
 $routes->get('/register/(:any)', 'Home::viewRegister/$1');

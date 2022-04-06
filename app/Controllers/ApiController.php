@@ -29,15 +29,6 @@ class ApiController extends BaseController
 
     // *===================================INICIO DE CLIENTES=========================================================================
     // * esta funcion envia todos los empleados 
-    /*
-    public function ValidarUsuario($ruta, $data = "")
-    {
-        if (session()->is_null) {
-            return view("auth/login");
-        }else{
-            if
-        }
-    }*/
     public function readClientes()
     {
         // * Instanciar modelo de la API
@@ -172,6 +163,7 @@ class ApiController extends BaseController
     {
         $clientes = new ApiModel();
         $resultado['clientes'] = $clientes->getAllClientes();
+        $resultado['bloques'] = $clientes->getAllBloque();
         return view("Pages/addVentas", $resultado);
     }
 
@@ -207,10 +199,10 @@ class ApiController extends BaseController
     public function readBloque()
     {
         // * Instanciar modelo de la API
-        $BloqueModel = new ApiModel();
+        $bloqueModel = new BloqueModel();
 
         // * manda a llamar la funcion getAllEmpleados(), esta funcion nos regresa el resultado de la consulta y lo guarda en la varaible $empleado
-        $bloque['bloque'] = $BloqueModel->getAllBloque();
+        $bloque['bloque'] = $bloqueModel->getBloqueSuma();
 
         // * regresar al cliente una respues en formato JSON
         return view("Pages/bloque", $bloque);
@@ -270,5 +262,33 @@ class ApiController extends BaseController
         $bloques = new BloqueModel();
         $resultado['bloques'] = $bloques->getBloque($id);
         return view("Pages/editBloque", $resultado);
+    }
+    public function plantillaAumentarExistencia($id)
+    {
+        $bloque = new BloqueModel();
+        $resultado['bloques'] = $bloque->getBloque($id);
+        foreach ($resultado['bloques']->getResult() as $row) {
+            $blq_tamanio = $row->blq_tamano;
+        }
+        $resultado['total'] = $bloque->getSumaBloques($blq_tamanio);
+        return view("Pages/aumentarExistencia", $resultado);
+    }
+    public function aumentarExistencia($id)
+    {
+        $bloques = new BloqueModel();
+        $bloques->where('id_bloque', $id);
+        $datos['bloque'] = $bloques->find();
+        foreach ($datos['bloque'] as $row) {
+            $existencia = $row->blq_existencia;
+        }
+        $adicion = $this->request->getPost("adicion");
+        $nuevaExistencia = $existencia + $adicion;
+        $data = [
+            'blq_existencia' => $nuevaExistencia
+        ];
+        $bloques->where('id_bloque', $id);
+        $bloques->set($data);
+        $bloques->update();
+        return redirect()->to(base_url('/bloque'));
     }
 }
