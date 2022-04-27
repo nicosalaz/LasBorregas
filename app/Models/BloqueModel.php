@@ -40,20 +40,18 @@ class BloqueModel extends Model
 
         return $query; // * Regresa al modelo el objeto $data[]
     }
-    public function getBloqueSuma()
+
+    public function setStockProduct($id, $cantidad)
     {
         $db = db_connect(); // * Conectarse ala BD
-        $sql = "SELECT *,SUM(blq_existencia) as suma
-        FROM bloque
-        GROUP BY blq_tamano;";
-        $query = $db->query($sql);
-        return $query;
-    }
-    public function getSumaBloques($blq_tamano)
-    {
-        $db = db_connect(); // * Conectarse ala BD
-        $sql = "SELECT SUM(blq_existencia) as suma FROM bloque WHERE blq_tamano = '" . $blq_tamano . "'";
-        $query = $db->query($sql);
-        return $query;
+        $bloque = $this->getBloque($id);
+        foreach ($bloque->getResult() as $row) {
+            $oldCantidad = $row->blq_existencia;
+        }
+        $newCantidad = $oldCantidad - $cantidad;
+        $query = 'UPDATE bloque 
+                    SET blq_existencia = ' . $newCantidad . ' 
+                    WHERE id_bloque = ' . $id; // * Ejecuta la consulta
+        $db->query($query);
     }
 }

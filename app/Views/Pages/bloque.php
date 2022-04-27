@@ -27,7 +27,7 @@
                 <td> <?php echo $row->blq_precio_venta ?></td>
                 <td> <?php echo $row->blq_tamano ?></td>
                 <td> <?php echo $row->estado ?></td>
-                <td> <?php echo $row->suma ?></td>
+                <td> <?php echo $row->blq_existencia ?></td>
                 <td>
                     <a href="<?php echo base_url('/bloque/eliminar/' . $row->id_bloque); ?>"><button class="btn btn-danger">Eliminar</button></a>
                     <a href="<?php echo base_url('/bloque/editar/' . $row->id_bloque); ?>"><button class="btn btn-warning">Editar</button></a>

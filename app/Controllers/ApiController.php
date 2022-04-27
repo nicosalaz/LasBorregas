@@ -6,6 +6,7 @@ use App\Models\ApiModel;
 use App\Models\ClientesModel;
 use App\Models\VentasModel;
 use App\Models\BloqueModel;
+use App\Models\DetalleVenta;
 use CodeIgniter\Session\Session;
 
 class ApiController extends BaseController
@@ -145,6 +146,17 @@ class ApiController extends BaseController
 
     public function addVentas()
     {
+        $detVentasModel = new DetalleVenta();
+        $data = $this->request->getPost();
+        print_r($data);
+        $result = $detVentasModel->venta($data);
+        if ($result === false) {
+            session()->setFlashdata("error", "No se pudo Agregar");
+        } else {
+            session()->setFlashdata("success", 'Agregado');
+        }
+        return redirect()->to(base_url('/venta'));
+        /*
         $VentasModel = new VentasModel();
         $data = [
             'fk_id_cliente' => $this->request->getPost("fk_id_cliente"),
@@ -157,7 +169,7 @@ class ApiController extends BaseController
         } else {
             session()->setFlashdata("error", "No se pudo Agregar");
         }
-        return redirect()->to(base_url('/venta'));
+        return redirect()->to(base_url('/venta'));*/
     }
     public function addPlantillaVenta()
     {
@@ -199,10 +211,10 @@ class ApiController extends BaseController
     public function readBloque()
     {
         // * Instanciar modelo de la API
-        $bloqueModel = new BloqueModel();
+        $bloqueModel = new ApiModel();
 
         // * manda a llamar la funcion getAllEmpleados(), esta funcion nos regresa el resultado de la consulta y lo guarda en la varaible $empleado
-        $bloque['bloque'] = $bloqueModel->getBloqueSuma();
+        $bloque['bloque'] = $bloqueModel->getAllBloque();
 
         // * regresar al cliente una respues en formato JSON
         return view("Pages/bloque", $bloque);
@@ -218,7 +230,6 @@ class ApiController extends BaseController
         }
         return redirect()->to(base_url('/bloque'));
     }
-    // *===================================INICIO DE BLOQUE=========================================================================
     public function addBloque()
     {
         $BloqueModel = new BloqueModel();
@@ -267,10 +278,6 @@ class ApiController extends BaseController
     {
         $bloque = new BloqueModel();
         $resultado['bloques'] = $bloque->getBloque($id);
-        foreach ($resultado['bloques']->getResult() as $row) {
-            $blq_tamanio = $row->blq_tamano;
-        }
-        $resultado['total'] = $bloque->getSumaBloques($blq_tamanio);
         return view("Pages/aumentarExistencia", $resultado);
     }
     public function aumentarExistencia($id)

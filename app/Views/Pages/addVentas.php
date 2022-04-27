@@ -12,8 +12,8 @@
                     <input type="date" class="form-control" id="fecha" name="fecha" required>
                 </div>
                 <div class="col-md-5">
-                    <label for="tipo_venta" class="form-label">Tipo de venta</label>
-                    <Select class="form-select" name="tipo_venta" id="tipo_venta" required>
+                    <label for="t_venta" class="form-label">Tipo de venta</label>
+                    <Select class="form-select" name="t_venta" id="t_venta" required>
                         <option value="Linea">En linea</option>
                         <option value="Mostrador">Mostrador</option>
                     </Select>
@@ -34,14 +34,14 @@
             <div class="tableContenido">
                 <div class="seleccion">
                     <div class="cantidad">
-                        <label for="productos">Producto</label>
-                        <select name="productos" id="productos" onchange="validarBtnAddContenido()">
+                        <label for="producto">Producto</label>
+                        <select name="producto" id="producto" onchange="validarBtnAddContenido()">
                             <option value="" selected></option>
                             <?php foreach ($bloques->getResult() as $rowBloque) {
-                                $msj = "Producto: " . $rowBloque->blq_nombre .
+                                $msj = $rowBloque->id_bloque . ". " . "Producto: " . $rowBloque->blq_nombre .
                                     " / Tamaño: " . $rowBloque->blq_tamano .
                                     " / Precio: " . $rowBloque->blq_precio_venta;
-                                $valor = $rowBloque->blq_nombre . ',' .
+                                $valor = $rowBloque->id_bloque . ',' . $rowBloque->blq_nombre . ',' .
                                     $rowBloque->blq_tamano . ',' . $rowBloque->blq_precio_venta . ',' . $rowBloque->blq_existencia;
                             ?>
                                 <option value="<?php echo $valor ?>"><?php echo $msj ?></option>
@@ -50,23 +50,42 @@
                     </div>
                     <div class="cantidad">
                         <label for="cantidad">Cantidad de Producto</label>
-                        <input type="number" name="cantidad" id="cantidad" onchange="validarBtnAddContenido()">
+                        <input type="text" name="cantidad" id="cantidad" onchange="validarBtnAddContenido()">
                     </div>
-                    <button type="submit" id="btn-addContenido" class="btn btn-primary" onclick="addContenido()" disabled>
+                    <button type="button" id="btn-addContenido" class="btn btn-primary" onclick="addContenido()" disabled>
                         <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 24 24" width="24px" fill="#ffffff">
                             <path d="M0 0h24v24H0V0z" fill="none" />
                             <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
                         </svg>
                     </button>
                 </div>
-                <table class="table table-hover" id="tablaContenido" name="tablaContenido">
+                <hr>
+                <h2>Productos</h2>
+                <hr>
+                <!--
+                <div id="tableBody">
+
+                </div>
+                -->
+                <table class="table">
                     <thead>
-                        <th>Producto</th>
-                        <th>Cantidad</th>
-                        <th>Precio</th>
+                        <tr>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                        </tr>
                     </thead>
                     <tbody id="tableBody">
+
                     </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                Total:
+                                <input type="text" name="total" id="total" value="0" readonly>
+                            </td>
+                        </tr>
+                    </tfoot>
                 </table>
             </div>
             <p id="resultado"></p>

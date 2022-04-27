@@ -1,0 +1,313 @@
+CRITICAL - 2022-04-25 13:52:14 --> Undefined property: App\Controllers\ApiController::$db
+#0 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(157): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 157)
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-04-25 13:58:18 --> Unknown column 'Linea' in 'field list'
+CRITICAL - 2022-04-25 13:58:18 --> Unknown column 'Linea' in 'field list'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\VentasModel.php(54): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(150): App\Models\VentasModel->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 14:03:33 --> Unknown column 'Linea' in 'field list'
+CRITICAL - 2022-04-25 14:03:33 --> Unknown column 'Linea' in 'field list'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\VentasModel.php(54): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(150): App\Models\VentasModel->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 14:10:46 --> Unknown column 'Linea' in 'field list'
+CRITICAL - 2022-04-25 14:10:46 --> Unknown column 'Linea' in 'field list'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(23): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 14:12:26 --> Unknown column 'Linea' in 'field list'
+CRITICAL - 2022-04-25 14:12:26 --> Unknown column 'Linea' in 'field list'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(23): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-25 14:13:51 --> Undefined array key "t_venta"
+#0 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(16): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 16)
+#1 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-04-25 14:15:26 --> Undefined array key "t_venta"
+#0 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 151)
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-25 14:16:50 --> Undefined array key "t_venta"
+#0 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 151)
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-25 14:18:14 --> Undefined array key "t_venta"
+#0 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 151)
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-25 14:19:05 --> Undefined array key "tipo_vent"
+#0 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 151)
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+CRITICAL - 2022-04-25 14:19:20 --> printf(): Argument #1 ($format) must be of type string, array given
+#0 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): printf(Array)
+#1 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 {main}
+ERROR - 2022-04-25 14:23:26 --> Unknown column 'Linea' in 'field list'
+CRITICAL - 2022-04-25 14:23:26 --> Unknown column 'Linea' in 'field list'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(23): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:09:18 --> Unknown column 'Linea' in 'field list'
+CRITICAL - 2022-04-25 18:09:18 --> Unknown column 'Linea' in 'field list'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(23): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:12:23 --> Unknown column 'Linea' in 'field list'
+CRITICAL - 2022-04-25 18:12:23 --> Unknown column 'Linea' in 'field list'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(23): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:14:01 --> Unknown column 'Linea' in 'field list'
+CRITICAL - 2022-04-25 18:14:01 --> Unknown column 'Linea' in 'field list'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(23): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:17:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},{$fecha},{$t_venta},1)' at line 2
+CRITICAL - 2022-04-25 18:17:15 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},{$fecha},{$t_venta},1)' at line 2
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(22): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:19:51 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},"{$fecha}","{$t_venta}",1)' at line 2
+CRITICAL - 2022-04-25 18:19:51 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},"{$fecha}","{$t_venta}",1)' at line 2
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(22): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:19:56 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},"{$fecha}","{$t_venta}",1)' at line 2
+CRITICAL - 2022-04-25 18:19:56 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},"{$fecha}","{$t_venta}",1)' at line 2
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(22): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:21:03 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},'{$fecha}','{$t_venta}',1)' at line 2
+CRITICAL - 2022-04-25 18:21:03 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},'{$fecha}','{$t_venta}',1)' at line 2
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(22): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:21:53 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},'{$fecha}','{$t_venta}',1)' at line 2
+CRITICAL - 2022-04-25 18:21:53 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},'{$fecha}','{$t_venta}',1)' at line 2
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(22): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:22:27 --> Cannot add or update a child row: a foreign key constraint fails (`bloquera`.`venta`, CONSTRAINT `fk_venta_cliente` FOREIGN KEY (`fk_id_cliente`) REFERENCES `cliente` (`id_cliente`))
+CRITICAL - 2022-04-25 18:22:27 --> Cannot add or update a child row: a foreign key constraint fails (`bloquera`.`venta`, CONSTRAINT `fk_venta_cliente` FOREIGN KEY (`fk_id_cliente`) REFERENCES `cliente` (`id_cliente`))
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(22): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:25:00 --> Cannot add or update a child row: a foreign key constraint fails (`bloquera`.`venta`, CONSTRAINT `fk_venta_cliente` FOREIGN KEY (`fk_id_cliente`) REFERENCES `cliente` (`id_cliente`))
+CRITICAL - 2022-04-25 18:25:00 --> Cannot add or update a child row: a foreign key constraint fails (`bloquera`.`venta`, CONSTRAINT `fk_venta_cliente` FOREIGN KEY (`fk_id_cliente`) REFERENCES `cliente` (`id_cliente`))
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(22): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:27:10 --> Cannot add or update a child row: a foreign key constraint fails (`bloquera`.`venta`, CONSTRAINT `fk_venta_cliente` FOREIGN KEY (`fk_id_cliente`) REFERENCES `cliente` (`id_cliente`))
+CRITICAL - 2022-04-25 18:27:10 --> Cannot add or update a child row: a foreign key constraint fails (`bloquera`.`venta`, CONSTRAINT `fk_venta_cliente` FOREIGN KEY (`fk_id_cliente`) REFERENCES `cliente` (`id_cliente`))
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(22): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:28:33 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},'{$fecha}','{$t_venta}',1)' at line 2
+CRITICAL - 2022-04-25 18:28:33 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '},'{$fecha}','{$t_venta}',1)' at line 2
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(22): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:29:16 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\'2022-04-07\',\'Linea\',1)' at line 2
+CRITICAL - 2022-04-25 18:29:16 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '\'2022-04-07\',\'Linea\',1)' at line 2
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(23): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-25 18:29:28 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '[$i]},@ID_VENTA,{$cantidades[$i]},{$precios[$i]})' at line 3
+CRITICAL - 2022-04-25 18:29:28 --> You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '[$i]},@ID_VENTA,{$cantidades[$i]},{$precios[$i]})' at line 3
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO det...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO det...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO det...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(28): CodeIgniter\Database\BaseConnection->query('INSERT INTO det...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-25 18:31:52 --> Undefined property: mysqli::$blq_existencia
+#0 C:\xampp\htdocs\lasBorregas\app\Models\BloqueModel.php(49): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 49)
+#1 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(31): App\Models\BloqueModel->setStockProduct('1', '22')
+#2 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#6 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#7 {main}
+ERROR - 2022-04-25 18:32:19 --> Unknown column 'existencia' in 'field list'
+CRITICAL - 2022-04-25 18:32:19 --> Unknown column 'existencia' in 'field list'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE bloque \r...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE bloque \r...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE bloque \r...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\BloqueModel.php(55): CodeIgniter\Database\BaseConnection->query('UPDATE bloque \r...')
+#4 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(31): App\Models\BloqueModel->setStockProduct('1', '22')
+#5 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#8 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}
+ERROR - 2022-04-25 18:35:16 --> Unknown column 'existencia' in 'field list'
+CRITICAL - 2022-04-25 18:35:16 --> Unknown column 'existencia' in 'field list'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('UPDATE bloque \r...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('UPDATE bloque \r...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('UPDATE bloque \r...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\BloqueModel.php(55): CodeIgniter\Database\BaseConnection->query('UPDATE bloque \r...')
+#4 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(31): App\Models\BloqueModel->setStockProduct('4', '20')
+#5 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(151): App\Models\DetalleVenta->venta(Array)
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#8 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#10 {main}

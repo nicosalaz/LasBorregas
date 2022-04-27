@@ -11,7 +11,7 @@ class VentasModel extends Model
     protected $useAutoIncrement = true;
     protected $returnType        = 'object'; #EL TIPO DE RETORNO QUE TIENE
     protected $useTimestamps     = false; # NO RELLENA POR DEFECTO LOS NULOS
-    protected $useSoftDeletes   = false;
+    //protected $useSoftDeletes   = false;
     protected $allowedFields = [
         'fk_id_cliente', 'fecha', 'tipo_venta', 'estado'
     ];
@@ -36,5 +36,33 @@ class VentasModel extends Model
     {
         $db = db_connect();
         $query = "SELECT id_cliente from venta where id_venta = " . $id;
+    }
+    public function venta($data)
+    {
+        $objBloque = new BloqueModel();
+        $productos = $data['id_prod'];
+        $cantidades = $data['cantidades'];
+        $precios = $data['precios'];
+        $fk_cliente = $data['fk_id_cliente'];
+        $tipo_venta = $data['tipo_venta'];
+        $fecha = $data['fecha'];
+        //print_r($data['productos']);
+        $this->db->transStrict(false);
+        $this->db->transStart();
+
+        $this->db->query("INSERT INTO venta (id_venta,fk_id_cliente,fecha,tipo_venta,estado) 
+                            VALUES(null,{$fk_cliente},{$fecha},{$tipo_venta},1);");
+
+        $this->db->query('SET @ID_VENTA = LAST_INSERT_ID();');
+
+        for ($i = 0; $i < count($productos); $i++) {
+            $this->db->query("INSERT INTO detalle_venta_bloque
+                                (id_det_vta_blq,fk_id_bloque,fk_id_venta,cantidad,precio_venta)
+                                 VALUES (null,{$productos[$i]},@ID_VENTA,{$cantidades[$i]},{$precios[$i]});");
+            $objBloque->setStockProduct($productos[$i], $cantidades[$i]);
+        }
+        $this->db->transComplete();
+
+        return $this->db->transStatus();
     }
 }

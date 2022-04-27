@@ -13,7 +13,7 @@
             <th scope="col">NOMBRE</th>
             <th scope="col">FECHA</th>
             <th scope="col">TIPO VENTA</th>
-            <th scope="col">ESTADO</th>
+            <th scope="col">TOTAL</th>
             <th scope="col">ACCIONES</th>
         </tr>
     </thead>
@@ -27,7 +27,7 @@
                 <td> <?php echo $row->cl_nombre ?></td>
                 <td> <?php echo $row->fecha ?></td>
                 <td> <?php echo $row->tipo_venta ?></td>
-                <td> <?php echo $row->estado ?></td>
+                <td> <?php echo $row->total ?></td>
                 <td>
                     <a href="<?php echo base_url('/venta/eliminar/' . $row->id_venta); ?>"><button class="btn btn-danger">Eliminar</button></a>
                     <a href="<?php echo base_url('/venta/editar/' . $row->id_venta); ?>"><button class="btn btn-warning">Editar</button></a>

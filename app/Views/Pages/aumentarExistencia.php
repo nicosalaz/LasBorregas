@@ -5,9 +5,9 @@
     <center>
         <div class="form-aumentar">
             <form action="<?php echo base_url('/bloque/aumentarExistencia/' . $row->id_bloque); ?>" method="post">
-                <?php foreach ($total->getResult() as $row) { ?>
+                <?php foreach ($bloques->getResult() as $row) { ?>
 
-                    <h3>Existencia Actual: <?php echo $row->suma; ?></h3>
+                    <h3>Existencia Actual: <?php echo $row->blq_existencia; ?></h3>
                 <?php } ?>
                 <hr>
                 <div class="row g-3">
