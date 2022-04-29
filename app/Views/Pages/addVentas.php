@@ -33,9 +33,9 @@
             </div>
             <div class="tableContenido">
                 <div class="seleccion">
-                    <div class="cantidad">
+                    <div class="prod">
                         <label for="producto">Producto</label>
-                        <select name="producto" id="producto" onchange="validarBtnAddContenido()">
+                        <select class="form-select" name="producto" id="producto" onchange="validarBtnAddContenido()">
                             <option value="" selected></option>
                             <?php foreach ($bloques->getResult() as $rowBloque) {
                                 $msj = $rowBloque->id_bloque . ". " . "Producto: " . $rowBloque->blq_nombre .
@@ -50,7 +50,7 @@
                     </div>
                     <div class="cantidad">
                         <label for="cantidad">Cantidad de Producto</label>
-                        <input type="text" name="cantidad" id="cantidad" onchange="validarBtnAddContenido()">
+                        <input type="text" class="form-control" name="cantidad" id="cantidad" onchange="validarBtnAddContenido()">
                     </div>
                     <button type="button" id="btn-addContenido" class="btn btn-primary" onclick="addContenido()" disabled>
                         <svg xmlns="http://www.w3.org/2000/svg" height="25px" viewBox="0 0 24 24" width="24px" fill="#ffffff">
@@ -73,6 +73,7 @@
                             <th>Producto</th>
                             <th>Cantidad</th>
                             <th>Precio</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody id="tableBody">
@@ -82,7 +83,7 @@
                         <tr>
                             <td>
                                 Total:
-                                <input type="text" name="total" id="total" value="0" readonly>
+                                <input class="form-control" type="text" name="total" id="total" value="0" readonly>
                             </td>
                         </tr>
                     </tfoot>
@@ -90,7 +91,7 @@
             </div>
             <p id="resultado"></p>
             <div style="margin-top: 20px;">
-                <button type="submit" id="btn-addVentas" class="btn btn-primary">Registrar Venta</button>
+                <button type="submit" id="btn-addVentas" onmouseover="btnValidarCompra()" class="btn btn-primary">Registrar Venta</button>
             </div>
         </form>
     </div>

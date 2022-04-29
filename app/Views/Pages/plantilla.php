@@ -9,6 +9,7 @@
     <!-- Bootstrap CSS -->
     <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">-->
     <link rel="stylesheet" href="<?php echo base_url('/') ?>/styles/bootstrap.min.css" />
+    <link rel="stylesheet" href="<?php echo base_url('/') ?>/fontawesome-6/css/all.min.css" />
     <link rel="stylesheet" href="<?php echo base_url('/') ?>/styles/styles.css">
     <link rel="shortcut icon" href="<?php echo base_url('/') ?>/lasBorregas.ico" type="image/x-icon">
     <title>Las Borregas</title>
@@ -39,7 +40,7 @@
             </div>
             <div class="menu">
                 <ul class="nav nav-pills">
-                    <li class="nav-item"><a href="<?php echo base_url('/vistas/admin'); ?>" class="nav-link" aria-current="page">Home</a></li>
+                    <li class="nav-item"><a href="<?php echo base_url('/home'); ?>" class="nav-link" aria-current="page">Home</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/clientes'); ?>" class="nav-link">Clientes</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/venta'); ?>" class="nav-link">Ventas</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/bloque'); ?>" class="nav-link">Bloques</a></li>
@@ -53,7 +54,6 @@
             </div>
         </div>
     </header>
-
 
     <!-- También se pueden importar componentes -->
     <?php echo $this->include('componentes/alerta'); ?>
@@ -71,7 +71,6 @@
             </a>
             <span class="text-muted">&copy; 2021 Borregas.Inc</span>
         </div>
-
         <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
             <li class="ms-3"><a class="text-muted" href="#"><svg class="bi" width="24" height="24">
                         <use xlink:href="#twitter" />

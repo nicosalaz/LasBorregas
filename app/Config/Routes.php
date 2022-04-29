@@ -63,6 +63,7 @@ $routes->post('/bloque/aumentarExistencia/(:num)', 'ApiController::aumentarExist
 // LAS DEMAS RUTAS QUE SE CREEN
 $routes->get('/vistas/(:any)', 'Home::view/$1');
 $routes->get('/register/(:any)', 'Home::viewRegister/$1');
+$routes->get('/home', 'Home::home');
 
 /*
  * --------------------------------------------------------------------

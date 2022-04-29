@@ -148,7 +148,6 @@ class ApiController extends BaseController
     {
         $detVentasModel = new DetalleVenta();
         $data = $this->request->getPost();
-        print_r($data);
         $result = $detVentasModel->venta($data);
         if ($result === false) {
             session()->setFlashdata("error", "No se pudo Agregar");
@@ -157,6 +156,8 @@ class ApiController extends BaseController
         }
         return redirect()->to(base_url('/venta'));
         /*
+        
+        ----------
         $VentasModel = new VentasModel();
         $data = [
             'fk_id_cliente' => $this->request->getPost("fk_id_cliente"),
@@ -171,6 +172,7 @@ class ApiController extends BaseController
         }
         return redirect()->to(base_url('/venta'));*/
     }
+
     public function addPlantillaVenta()
     {
         $clientes = new ApiModel();

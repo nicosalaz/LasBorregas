@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\ClientesModel;
 use Exception;
+use App\Models\ApiModel;
 
 class AuthController extends BaseController
 {
@@ -13,6 +14,7 @@ class AuthController extends BaseController
         $usuario = $this->request->getPost('usuario');
         $clave = $this->request->getPost('clave');
         $objCliente = new ClientesModel();
+        $objBloque = new ApiModel();
         $cliente = $objCliente->obtenerCliente($usuario);
         $session = session();
         if (!$cliente) {
@@ -24,7 +26,8 @@ class AuthController extends BaseController
             return redirect()->to(base_url('/'));
         }
         $session->cliente = $cliente;
-        return view('Pages/admin');
+        $dataBloque['bloques'] = $objBloque->getAllBloque();
+        return view('Pages/admin', $dataBloque);
     }
     public function logout()
     {

@@ -38,4 +38,10 @@ class Home extends BaseController
         echo view('auth/' . $page); // carga el contenido que tenemos en nuestra app
         //echo view('pages/footer'); // carga el pie de pagina de la app
     }
+    public function home()
+    {
+        $objBloque = new ApiModel();
+        $dataBloque['bloques'] = $objBloque->getAllBloque();
+        return view('Pages/admin', $dataBloque);
+    }
 }
