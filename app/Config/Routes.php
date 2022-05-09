@@ -44,6 +44,7 @@ $routes->post('/clientes/agregar', 'ApiController::addCliente');
 $routes->get('/clientes/editar/(:num)', 'ApiController::editPlantilla/$1');
 $routes->post('/clientes/editarCliente/(:num)', 'ApiController::editCliente/$1');
 $routes->get('/clientes/getVentaCliente/(:num)', 'ApiController::getVentaCliente/$1');
+$routes->get('/clientes/getDetalleVenta/(:num)', 'ApiController::getDetalleVenta/$1');
 //LOGICA DE VENTAS
 $routes->get('/venta', 'ApiController::readVentas');
 $routes->get('/venta/eliminar/(:num)', 'ApiController::deleteVenta/$1');
@@ -59,6 +60,9 @@ $routes->get('/bloque/editar/(:num)', 'ApiController::editPlantillaBloque/$1');
 $routes->post('/bloque/editarBloque/(:num)', 'ApiController::editBloque/$1');
 $routes->get('/bloque/plantillaAumentarExistencia/(:num)', 'ApiController::plantillaAumentarExistencia/$1');
 $routes->post('/bloque/aumentarExistencia/(:num)', 'ApiController::aumentarExistencia/$1');
+
+//LOGICA PARA REPORTES
+$routes->get('/reportes', 'ApiController::getReportesPlantilla');
 
 // LAS DEMAS RUTAS QUE SE CREEN
 $routes->get('/vistas/(:any)', 'Home::view/$1');

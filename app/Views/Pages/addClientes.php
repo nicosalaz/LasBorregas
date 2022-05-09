@@ -46,7 +46,11 @@
                 </div>
                 <div class="col-md-5">
                     <label for="lugar" class="form-label">Lugar</label>
-                    <input type="text" class="form-control" id="lugar" name="lugar" required>
+                    <select class="form-select" name="lugar">
+                        <option selected>Seleccione....</option>
+                        <option value="Casa">Casa</option>
+                        <option value="Departamento">Departamento</option>
+                    </select>
                 </div>
                 <div class="col-md-6">
                     <label for="municipio" class="form-label">Municipio</label>

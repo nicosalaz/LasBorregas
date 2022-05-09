@@ -65,4 +65,15 @@ class VentasModel extends Model
 
         return $this->db->transStatus();
     }
+
+    public function getDetalleVenta($id)
+    {
+        $db = db_connect();
+        $query =    "SELECT *
+                    FROM venta v inner join detalle_venta_bloque dvb ON(v.id_venta = dvb.fk_id_venta)
+                    INNER JOIN bloque b ON(dvb.fk_id_bloque = b.id_bloque)
+                    WHERE v.id_venta = " . $id;
+        $data = $db->query($query);
+        return $data;
+    }
 }

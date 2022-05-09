@@ -23,6 +23,7 @@ class ApiModel extends Model
         $query = $db->query('SELECT * 
                             FROM venta , cliente 
                             where cliente.id_cliente = venta.fk_id_cliente
+                            and cliente.estado = 1
                             and venta.estado = 1'); // * Ejecuta la consulta
 
         return $query; // * Regresa al modelo el objeto $data[]

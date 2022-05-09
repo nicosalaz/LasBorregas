@@ -46,8 +46,11 @@ footer {
 }
 .ventaCliente {
   background-color: white;
+  display: flex;
+  flex-direction: column;
   width: 40vw;
   margin: 10px 10px 10px 0px;
+  padding: 10px 0px 10px 0px;
   border: 1px solid black;
   border-radius: 15px;
   text-align: center;
@@ -121,4 +124,39 @@ footer {
   margin: 15px;
   border: solid black;
   border-radius: 5px;
+}
+
+.container_detalle_venta{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.container_detalle_venta .detalle_venta{
+  width: 70%;
+}
+
+.reportes{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.reportes .reporte-card{
+  width: 20%;
+  height: 40%;
+  margin: 10px 10px 10px 10px;
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 5px;
+  border: solid;
+  border-color: gray;
+}
+.reportes .reporte-card p{
+  text-align: center;
 }

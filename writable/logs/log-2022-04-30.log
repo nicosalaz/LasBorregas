@@ -1,0 +1,46 @@
+ERROR - 2022-04-30 18:03:37 --> Unknown column 'v.id_venta17' in 'where clause'
+CRITICAL - 2022-04-30 18:03:37 --> Unknown column 'v.id_venta17' in 'where clause'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\r\n     ...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\r\n     ...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\r\n     ...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\VentasModel.php(76): CodeIgniter\Database\BaseConnection->query('SELECT *\r\n     ...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(125): App\Models\VentasModel->getDetalleVenta('17')
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->getDetalleVenta('17')
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+ERROR - 2022-04-30 18:04:16 --> Unknown column 'v.id_venta17' in 'where clause'
+CRITICAL - 2022-04-30 18:04:16 --> Unknown column 'v.id_venta17' in 'where clause'
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('SELECT *\r\n     ...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\r\n     ...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\r\n     ...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\VentasModel.php(76): CodeIgniter\Database\BaseConnection->query('SELECT *\r\n     ...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(125): App\Models\VentasModel->getDetalleVenta('17')
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->getDetalleVenta('17')
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-30 18:23:17 --> Undefined variable $fecha
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\getDetalleVentaCliente.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/getDetall...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(126): view('Pages/getDetall...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->getDetalleVenta('21')
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-04-30 18:25:08 --> Undefined variable $fecha
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\getDetalleVentaCliente.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/getDetall...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(126): view('Pages/getDetall...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->getDetalleVenta('21')
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

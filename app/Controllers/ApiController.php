@@ -118,13 +118,19 @@ class ApiController extends BaseController
         $resultado['ventas'] = $ventas->find();
         return view("Pages/getVentasCliente", $resultado);
     }
+
+    public function getDetalleVenta($id)
+    {
+        $ventas = new VentasModel();
+        $data['detalles'] = $ventas->getDetalleVenta($id);
+        return view("Pages/getDetalleVentaCliente", $data);
+    }
     // *===================================INICIO DE VENTAS=========================================================================
     // *===================================INICIO DE VENTAS=========================================================================
     public function readVentas()
     {
         // * Instanciar modelo de la API
         $VentasModel = new ApiModel();
-
         // * manda a llamar la funcion getAllEmpleados(), esta funcion nos regresa el resultado de la consulta y lo guarda en la varaible $empleado
         $ventas['venta'] = $VentasModel->getAllVentas();
 
@@ -155,22 +161,6 @@ class ApiController extends BaseController
             session()->setFlashdata("success", 'Agregado');
         }
         return redirect()->to(base_url('/venta'));
-        /*
-        
-        ----------
-        $VentasModel = new VentasModel();
-        $data = [
-            'fk_id_cliente' => $this->request->getPost("fk_id_cliente"),
-            'fecha' => $this->request->getPost("fecha"),
-            'tipo_venta' => $this->request->getPost("tipo_venta"),
-            'estado' => 1
-        ];
-        if ($VentasModel->insert($data)) {
-            session()->setFlashdata("success", 'Agregado');
-        } else {
-            session()->setFlashdata("error", "No se pudo Agregar");
-        }
-        return redirect()->to(base_url('/venta'));*/
     }
 
     public function addPlantillaVenta()
@@ -299,5 +289,10 @@ class ApiController extends BaseController
         $bloques->set($data);
         $bloques->update();
         return redirect()->to(base_url('/bloque'));
+    }
+    //########################################### REPORTES ###########################################
+    public function getReportesPlantilla()
+    {
+        return view('Pages/reportes');
     }
 }

@@ -1,6 +1,7 @@
 <?php echo $this->extend('Pages/plantilla'); ?>
 
 <?php echo $this->section('contenido'); ?>
+
 <div class="ventas">
     <?php
     if ($ventas) {
@@ -15,6 +16,9 @@
                 <p>
                 <h4>Tipo de venta: </h4> <?php echo $row->tipo_venta; ?>
                 </p>
+                <a href="<?php echo base_url('/clientes/getDetalleVenta/' . $row->id_venta) ?>">
+                    <button type="button" class="btn btn-primary">Detalles</button>
+                </a>
             </div>
         <?php
         }
@@ -27,4 +31,9 @@
     }
     ?>
 </div>
+<center>
+    <a href="<?php echo base_url('/clientes'); ?>">
+        <button class="btn btn-outline-secondary">Volver</button>
+    </a>
+</center>
 <?php echo $this->endSection(); ?>

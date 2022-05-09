@@ -9,7 +9,7 @@
             <div class="row g-3">
                 <div class="col-md-5">
                     <label for="nombre" class="form-label">Nombre</label>
-                    <input type="text" oninput="validarAddBloque()" class="form-control" id="nombre" name="nombre" required>
+                    <input type="text" oninput="validarAddBloque()" class="form-control" id="nombre" name="nombre" value="tabicon" readonly>
                 </div>
                 <div class="col-md-3">
                     <label for="pUnitario" class="form-label">Precio Unitario</label>

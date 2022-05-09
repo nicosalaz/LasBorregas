@@ -44,6 +44,7 @@
                     <li class="nav-item"><a href="<?php echo base_url('/clientes'); ?>" class="nav-link">Clientes</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/venta'); ?>" class="nav-link">Ventas</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/bloque'); ?>" class="nav-link">Bloques</a></li>
+                    <li class="nav-item"><a href="<?php echo base_url('/reportes'); ?>" class="nav-link">Reportes</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/vistas/nosotros'); ?>" class="nav-link">Nosotros</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/auth/logout'); ?>" class="nav-link">
                             <?php

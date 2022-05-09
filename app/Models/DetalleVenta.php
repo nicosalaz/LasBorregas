@@ -6,6 +6,7 @@ use CodeIgniter\Model;
 
 class DetalleVenta extends Model
 {
+
     public function venta($data)
     {
         $objBloque = new BloqueModel();
