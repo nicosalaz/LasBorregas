@@ -2,26 +2,35 @@
 
 <?php echo $this->section('contenido'); ?>
 
+<center>
+    <h1>REPORTES</h1>
+</center>
+<hr>
 <div class="reportes">
     <div class="reporte-card">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam nobis eum error deleniti provident quaerat, ea numquam id blanditiis consequuntur nesciunt fugiat saepe aut ipsum adipisci, explicabo excepturi. Amet.</p>
-        <button class="btn btn-secondary">Reporte</button>
+        <a href="<?php echo base_url('/reportes/bloques_vendidos_ordenados') ?>">
+            <button class="btn btn-secondary">Los bloques mas vendidos (ordenados del mayor al menor).</button>
+        </a>
     </div>
     <div class="reporte-card">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam nobis eum error deleniti provident quaerat, ea numquam id blanditiis consequuntur nesciunt fugiat saepe aut ipsum adipisci, explicabo excepturi. Amet.</p>
-        <button class="btn btn-secondary">Reporte</button>
+        <a href="<?php echo base_url('/reportes/clientes_ventas_ordenadas') ?>">
+            <button class="btn btn-secondary">Los clientes con mas ventas, de mayor a menor.</button>
+        </a>
+
     </div>
     <div class="reporte-card">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam nobis eum error deleniti provident quaerat, ea numquam id blanditiis consequuntur nesciunt fugiat saepe aut ipsum adipisci, explicabo excepturi. Amet.</p>
-        <button class="btn btn-secondary">Reporte</button>
+        <a href="<?php echo base_url('/reportes/ventas_por_fecha') ?>">
+            <button class="btn btn-secondary">Ventas por fecha especifica.</button>
+        </a>
+
     </div>
     <div class="reporte-card">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam nobis eum error deleniti provident quaerat, ea numquam id blanditiis consequuntur nesciunt fugiat saepe aut ipsum adipisci, explicabo excepturi. Amet.</p>
-        <button class="btn btn-secondary">Reporte</button>
+        <a href="<?php echo base_url('/reportes/ventas_por_cliente') ?>">
+            <button class="btn btn-secondary">Ventas por cliente especifico.</button>
+        </a>
     </div>
     <div class="reporte-card">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores quisquam nobis eum error deleniti provident quaerat, ea numquam id blanditiis consequuntur nesciunt fugiat saepe aut ipsum adipisci, explicabo excepturi. Amet.</p>
-        <button class="btn btn-secondary">Reporte</button>
+        <button class="btn btn-secondary">Mostrar el histórico de ventas a cierto cliente</button>
     </div>
 </div>
 

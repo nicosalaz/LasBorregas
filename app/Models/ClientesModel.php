@@ -42,4 +42,17 @@ class ClientesModel extends Model
 
         return $query; // * Regresa al modelo el objeto $data[]
     }
+    public function clientesVentasOrdenadas()
+    {
+        $db = db_connect(); // * Conectarse ala BD
+
+        $query = $db->query("SELECT c.id_cliente as id,c.cl_nombre as nombre,COUNT(v.fk_id_cliente) as sumatoria 
+                            FROM venta as v INNER JOIN cliente as c ON (v.fk_id_cliente= c.id_cliente) 
+                            WHERE v.estado = 1 
+                            AND c.estado = 1 
+                            GROUP by c.id_cliente 
+                            ORDER BY sumatoria DESC;"); // * Ejecuta la consulta
+
+        return $query; // * Regresa al modelo el objeto $data[]
+    }
 }

@@ -68,26 +68,6 @@ function addContenido() {
         imprimirCarrito();
         llenarCampos();
         calcularTotal();
-        /*tableBody.innerHTML += item.toString();
-        for (let index = 0; index < precios.length; index++) {
-            precio_total += parseFloat(precios[index]);
-        }
-        total.value = "$" + precio_total;
-        */
-       /*
-       precio_total = precio_total + parseFloat(cantidad.value) * parseFloat(arraySeleccionado[3]);
-       "<td> <input type='text' class='form-control' id='pro' name='productos[]' value='"+ msj +"' readonly></td>" +
-                            '<input type="text" class="form-control"name="id_prod[]" id="input' + id + '" value="'+ id +'" hidden>' +
-                             "<td><input type='text' class='form-control' id='canti' name='cantidades[]' value='"+ cantidad.value +"' readonly></td>"
-                        + "<td><input type='text' class='form-control sm-2' id='price' name='precios[]' value='"+ (parseFloat(cantidad.value) * parseFloat(arraySeleccionado[3])) +"' readonly></td>" +
-                        "<td> <div class='d-grid gap-2 d-md-block'> "+
-                        "<button type='button' onclick='' class='bd-example btn btn-warning'><i class='fa-solid fa-pen-to-square'></i></button>"+
-                        "<button type='button' onclick='' class='btn btn-danger'><i class='fa-solid fa-trash-can'></i></button></div></td></tr>";
-        tableBody.innerHTML += '<div> <input type="text" name="id_prod[]" value="'+ id +'" hidden>'
-                            + ' <input type="text" name="productos[]" value="'+ msj +'" readonly>' +
-                            '<input type="text" name="cantidades[]" value="'+ cantidad +'" readonly>'
-                            + '<input type="text" name="precios[]" value="'+(parseInt(cantidad) * parseInt(arraySeleccionado[3]))+'" readonly> </div> <hr>';
-        */
         listaProductos.selectedIndex = 0;
         cantidad.value= "";
         btnAdd.disabled = true;
@@ -141,10 +121,6 @@ function editar(x) {
     if (!estadoCantidad) {
         cantidadEditar.readOnly = false;
         estadoCantidad = true;
-        /*precio_total -= parseFloat(precioNuevo.value);
-        console.log(precio_total);
-        precio_total += parseFloat(cantidadEditar.value) * parseFloat(precioUni.value);
-        total.value = "$" + precio_total;*/
     }else{
         cantidadEditar.readOnly = true;
         estadoCantidad = false;
@@ -183,4 +159,74 @@ function btnValidarCompra() {
     }else{
         btnComprar.disabled = true;
     }
+}
+/*
+###################################### REPORTES ######################################
+*/
+
+function leerArray() {
+    const arregloVentas = document.getElementById("arreglo").value;
+    const arr = arregloVentas.split("/");
+    for (let index = 0; index < arr.length; index++) {
+        arr[index] = arr[index].split(",");
+    }
+    return arr;
+}
+
+function buscarFecha() {
+    const arreglo = leerArray();
+    const fecha = document.getElementById("fecha").value;
+    let mensaje = "";
+    const arregloHtml = [];
+    for (let index = 0; index < arreglo.length; index++) {
+        if (arreglo[index][2] == fecha) {
+            mensaje = "<tr><td>"+arreglo[index][0]+"</td>"
+                        +"<td>"+arreglo[index][1]+"</td>"
+                        +"<td>"+arreglo[index][2]+"</td>"
+                        +"<td>"+arreglo[index][3]+"</td>"
+                        +"<td>"+arreglo[index][4]+"</td></tr>";
+            arregloHtml.push(mensaje);
+        }
+    }
+    if (arregloHtml.length == 0) {
+        arregloHtml.push("<tr><h1>NO HAY VENTAS EN ESTA FECHA</h1></tr>");
+    }
+    imprimirVentasPorFecha(arregloHtml);
+}
+
+function imprimirVentasPorFecha(arreglo) {
+    const tabla = document.getElementById('resultVentasPorFecha');
+    tabla.innerHTML = "";
+    for (let index = 0; index < arreglo.length; index++) {
+        tabla.innerHTML += arreglo[index];
+    }
+}
+
+function buscarPorCliente() {
+    const arreglo = leerArray();
+    const listaCliente = document.getElementById("clienteSelect");
+    const idCliente = listaCliente.options[listaCliente.selectedIndex].value;
+    const nombreCliente = document.getElementById("nombreCliente");
+    nombreCliente.innerHTML = listaCliente.options[listaCliente.selectedIndex].text.toUpperCase();
+    let mensaje = "";
+    const arregloHtml = [];
+    if (listaCliente.selectedIndex != 0) {
+        for (let index = 0; index < arreglo.length; index++) {
+            if (arreglo[index][1] == idCliente) {
+                mensaje = "<tr><td>"+arreglo[index][0]+"</td>"
+                            +"<td>"+arreglo[index][3]+"</td>"
+                            +"<td>"+arreglo[index][4]+"</td>"
+                            +"<td>$ "+arreglo[index][5]+"</td></tr>";
+                arregloHtml.push(mensaje);
+            }
+        }
+        if (arregloHtml.length == 0) {
+            arregloHtml.push("<tr><h2>EL CLIENTE NO TIENE VENTAS HASTA LA FECHA</h2></tr>");
+        }
+        imprimirVentasPorFecha(arregloHtml);
+    } else {
+        alert("Debes seleccionar un cliente");
+    }
+    
+    listaCliente.selectedIndex = 0;
 }

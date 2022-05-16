@@ -1,0 +1,43 @@
+CRITICAL - 2022-05-10 01:02:30 --> Undefined property: stdClass::$id_cliente
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\bloquesVendidos.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 26)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/bloquesVe...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(302): view('Pages/bloquesVe...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->getReporteBloquesVendidos()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-10 15:21:39 --> Undefined variable $aux
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\ventasPorFecha.php(9): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 9)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/ventasPor...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(314): view('Pages/ventasPor...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->getReporteVentasPorFecha()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-10 15:25:37 --> Undefined variable $aux
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\ventasPorFecha.php(8): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 8)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/ventasPor...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(314): view('Pages/ventasPor...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->getReporteVentasPorFecha()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-10 15:25:54 --> Unsupported operand types: string + string
+#0 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/ventasPor...', Array, true)
+#3 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(314): view('Pages/ventasPor...', Array)
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->getReporteVentasPorFecha()
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

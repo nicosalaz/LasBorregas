@@ -76,4 +76,33 @@ class VentasModel extends Model
         $data = $db->query($query);
         return $data;
     }
+
+    public function bloquesVendidosOrdenados()
+    {
+        $db = db_connect();
+        $query =    "SELECT b.id_bloque as id, b.blq_nombre as nombre,b.blq_tamano as tamano ,SUM(dvb.cantidad) as sumatoria
+                        FROM venta as v INNER JOIN detalle_venta_bloque as dvb ON (v.id_venta =dvb.fk_id_venta)
+                        INNER JOIN bloque as b on (b.id_bloque = dvb.fk_id_bloque)
+                        WHERE v.estado = 1
+                        GROUP by b.id_bloque
+                        ORDER BY sumatoria DESC; ";
+        $data = $db->query($query);
+        return $data;
+    }
+    /*
+    SELECT v.id_venta,c.cl_nombre, v.fecha, v.tipo_venta, v.total
+FROM venta as v INNER JOIN cliente as c on(c.id_cliente = v.fk_id_cliente)
+WHERE v.estado = 1;
+    */
+    public function ventasPorFecha()
+    {
+        $db = db_connect(); // * Conectarse ala BD
+
+        $query = $db->query("SELECT v.id_venta,c.cl_nombre,c.id_cliente, v.fecha, v.tipo_venta, v.total
+                            FROM venta as v INNER JOIN cliente as c on(c.id_cliente = v.fk_id_cliente) 
+                            WHERE v.estado = 1
+                            and c.estado = 1;"); // * Ejecuta la consulta
+
+        return $query; // * Regresa al modelo el objeto $data[]
+    }
 }

@@ -295,4 +295,31 @@ class ApiController extends BaseController
     {
         return view('Pages/reportes');
     }
+    public function getReporteBloquesVendidos()
+    {
+        $ventaModel = new VentasModel();
+        $data['bloquesVendidos'] = $ventaModel->bloquesVendidosOrdenados();
+        return view('Pages/bloquesVendidos', $data);
+    }
+    public function getReporteClientesVentas()
+    {
+        $clientesModel = new ClientesModel();
+        $data['clientesVentas'] = $clientesModel->clientesVentasOrdenadas();
+        return view('Pages/clientesVentas', $data);
+    }
+    public function getReporteVentasPorFecha()
+    {
+        $ventaModel = new VentasModel();
+        $data['ventasPorFecha'] = $ventaModel->ventasPorFecha();
+        return view('Pages/ventasPorFecha', $data);
+    }
+    public function getReporteVentasPorCliente()
+    {
+        $ventaModel = new VentasModel();
+        $clienteModel = new ClientesModel();
+        $data['ventasPorCliente'] = $ventaModel->ventasPorFecha();
+        $clienteModel->where('estado', 1);
+        $data['clientes'] = $clienteModel->findAll();
+        return view('Pages/ventasPorCliente', $data);
+    }
 }

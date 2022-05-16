@@ -63,7 +63,10 @@ $routes->post('/bloque/aumentarExistencia/(:num)', 'ApiController::aumentarExist
 
 //LOGICA PARA REPORTES
 $routes->get('/reportes', 'ApiController::getReportesPlantilla');
-
+$routes->get('/reportes/bloques_vendidos_ordenados', 'ApiController::getReporteBloquesVendidos');
+$routes->get('/reportes/clientes_ventas_ordenadas', 'ApiController::getReporteClientesVentas');
+$routes->get('/reportes/ventas_por_fecha', 'ApiController::getReporteVentasPorFecha');
+$routes->get('/reportes/ventas_por_cliente', 'ApiController::getReporteVentasPorCliente');
 // LAS DEMAS RUTAS QUE SE CREEN
 $routes->get('/vistas/(:any)', 'Home::view/$1');
 $routes->get('/register/(:any)', 'Home::viewRegister/$1');
