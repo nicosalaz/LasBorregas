@@ -230,3 +230,14 @@ function buscarPorCliente() {
     
     listaCliente.selectedIndex = 0;
 }
+
+function validarFecha(){
+    const fecha = document.getElementById("fecha");
+    const fechaActual = new Date();
+    const fechaM = new Date(fecha.value);
+    if (fechaM.toLocaleDateString("es-MX") >= fechaActual.toLocaleDateString("es-MX")) {
+        alert("Recuerda que la fecha debe ser menor o igual a la actual.");
+        fecha.value = "";
+    }
+
+}

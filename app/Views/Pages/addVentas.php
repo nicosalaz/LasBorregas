@@ -9,7 +9,7 @@
             <div class="row g-3">
                 <div class="col-md-5">
                     <label for="fecha" class="form-label">Fecha</label>
-                    <input type="date" class="form-control" id="fecha" name="fecha" required>
+                    <input type="date" class="form-control" onchange="validarFecha()" id="fecha" name="fecha" required>
                 </div>
                 <div class="col-md-5">
                     <label for="t_venta" class="form-label">Tipo de venta</label>
