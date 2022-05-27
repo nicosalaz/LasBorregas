@@ -11,7 +11,7 @@ class IsLoggedIn implements FilterInterface
     public function before(RequestInterface $request, $arguments = null)
     {
         // Do something here
-        if (!session('cliente')) {
+        if (!session('usuario')) {
             session()->setFlashdata('error', "Debes iniciar sesión primero");
             return redirect()->to(base_url('/'));
         }

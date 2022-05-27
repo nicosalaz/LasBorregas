@@ -7,6 +7,8 @@ use App\Models\ClientesModel;
 use App\Models\VentasModel;
 use App\Models\BloqueModel;
 use App\Models\DetalleVenta;
+use App\Models\EmpleadoModel;
+use App\Models\RolModel;
 use CodeIgniter\Session\Session;
 
 class ApiController extends BaseController
@@ -55,7 +57,8 @@ class ApiController extends BaseController
     public function addCliente()
     {
         $clienteModel = new ClientesModel();
-        $data = [
+        $data = $this->request->getPost();
+        /*[
             'cl_nombre' => $this->request->getPost("nombre"),
             'cl_apaterno' => $this->request->getPost("apaterno"),
             'cl_amaterno' => $this->request->getPost("amaterno"),
@@ -69,11 +72,12 @@ class ApiController extends BaseController
             'estado' => 1,
             'usuario' => $this->request->getPost("usuario"),
             'contrasena' => $this->request->getPost("contrasena")
-        ];
-        if ($clienteModel->insert($data)) {
-            session()->setFlashdata("success", 'Agregado');
+        ];*/
+        $result = $clienteModel->addCliente($data);
+        if ($result === false) {
+            session()->setFlashdata("error", "No se pudo Agregar");
         } else {
-            session()->setFlashdata("error", "No se pudo eliminar");
+            session()->setFlashdata("success", 'Agregado');
         }
         return redirect()->to(base_url('/clientes'));
     }
@@ -93,14 +97,14 @@ class ApiController extends BaseController
             'cl_telefono' => $this->request->getPost("telefono"),
             'estado' => 1,
             'usuario' => $this->request->getPost("usuario"),
-            'contrasena' => $this->request->getPost("contrasena")
+            'clave' => $this->request->getPost("contrasena")
         ];
-        $clienteModel->set($data);
-        $clienteModel->where('id_cliente', $id);
-        if ($clienteModel->update()) {
-            session()->setFlashdata("success", 'Actualización exitosa');
-        } else {
+        $data['id_cliente'] = $id;
+        $result = $clienteModel->updateCliente($data);
+        if ($result === false) {
             session()->setFlashdata("error", "No se pudo Actualizar");
+        } else {
+            session()->setFlashdata("success", 'Actualización exitosa');
         }
         return redirect()->to(base_url('/clientes'));
     }
@@ -118,7 +122,6 @@ class ApiController extends BaseController
         $resultado['ventas'] = $ventas->find();
         return view("Pages/getVentasCliente", $resultado);
     }
-
     public function getDetalleVenta($id)
     {
         $ventas = new VentasModel();
@@ -154,6 +157,7 @@ class ApiController extends BaseController
     {
         $detVentasModel = new DetalleVenta();
         $data = $this->request->getPost();
+        //print_r($data);
         $result = $detVentasModel->venta($data);
         if ($result === false) {
             session()->setFlashdata("error", "No se pudo Agregar");
@@ -166,8 +170,10 @@ class ApiController extends BaseController
     public function addPlantillaVenta()
     {
         $clientes = new ApiModel();
+        $empleadoModel = new EmpleadoModel();
         $resultado['clientes'] = $clientes->getAllClientes();
         $resultado['bloques'] = $clientes->getAllBloque();
+        $resultado['empleados'] = $empleadoModel->getAllEmpleados();
         return view("Pages/addVentas", $resultado);
     }
 
@@ -290,6 +296,101 @@ class ApiController extends BaseController
         $bloques->update();
         return redirect()->to(base_url('/bloque'));
     }
+
+    // ===================================INICIO DE EMPLEADO=========================================================================
+
+    public function getPlantillaEmpleados()
+    {
+        $empleadoModel = new EmpleadoModel();
+        $rolModel = new RolModel();
+        $data['empleados'] = $empleadoModel->getAllEmpleadosGeneral();
+        return view('Pages/empleados', $data);
+    }
+
+    public function getPlantillaAddEmpleado()
+    {
+        $rolModel = new RolModel();
+        $data['roles'] = $rolModel->getRolesEmpleados();
+        return view('Pages/addEmpleado', $data);
+    }
+
+    public function addEmpleado()
+    {
+        $empleadoModel = new EmpleadoModel();
+        $data = $this->request->getPost();
+        /*$data = [
+            'nombre_empleado' => $this->request->getPost("nombre_empleado"),
+            'apellido_empleado' => $this->request->getPost("apellido_empleado"),
+            'fecha_ingreso' => $this->request->getPost("fecha_ingreso"),
+            'fecha_egreso' => null,
+            'telefono' => $this->request->getPost("telefono"),
+            'nombre_usuario' => $this->request->getPost("nombre_usuario"),
+            'clave' => $this->request->getPost("contrasena"),
+        ];*/
+        $resultado = $empleadoModel->addEmpleado($data);
+        if ($resultado === false) {
+            session()->setFlashdata("error", "No se pudo Insertar");
+        } else {
+            session()->setFlashdata("success", "Se agrego exitosamente");
+        }
+        return redirect()->to(base_url('/empleados'));
+    }
+
+    public function eliminarEmpleado($id)
+    {
+        date_default_timezone_set("America/New_York");
+        $fecha = date("Y-m-d");
+        $empleadoModel = new EmpleadoModel();
+        $empleadoModel->set(["estado_actividad" => 0, "fecha_egreso" => $fecha])
+            ->where("id_empleado = ", $id);
+        if ($empleadoModel->update()) {
+            session()->setFlashdata("success", "Se eliminó exitosamente");
+        } else {
+            session()->setFlashdata("error", "No se pudo eliminar");
+        }
+        return redirect()->to(base_url('/empleados'));
+    }
+
+    public function plantillaEditEmpleado($id)
+    {
+        $empleadoModel = new EmpleadoModel();
+        $rolModel = new RolModel();
+        $data['empleado'] = $empleadoModel->select("*")
+            ->join("usuario", "usuario.idUsuario = empleado.fkiduser")
+            ->join("rol", "rol.id_rol = empleado.fkidrol")
+            ->where("id_empleado =", $id)
+            ->find();
+        foreach ($data['empleado'] as $key) {
+            $rol = $key->fkidrol;
+        }
+        $data['roles'] = $rolModel->where([
+            "nombre_rol != " => 'CLIENTE',
+            "id_rol !=" => $rol
+        ])
+            ->findAll();
+        return view("Pages/editEmpleado", $data);
+    }
+
+    public function editEmpleado($id)
+    {
+        $empleadoModel = new EmpleadoModel();
+        $rolModel = new RolModel();
+        $data['empleado'] = $empleadoModel->select("*")
+            ->join("usuario", "usuario.idUsuario = empleado.fkiduser")
+            ->join("rol", "rol.id_rol = empleado.fkidrol")
+            ->where("id_empleado =", $id)
+            ->find();
+        foreach ($data['empleado'] as $key) {
+            $rol = $key->fkidrol;
+        }
+        $data['roles'] = $rolModel->where([
+            "nombre_rol != " => 'CLIENTE',
+            "id_rol !=" => $rol
+        ])
+            ->findAll();
+        return view("Pages/editEmpleado", $data);
+    }
+
     //########################################### REPORTES ###########################################
     public function getReportesPlantilla()
     {

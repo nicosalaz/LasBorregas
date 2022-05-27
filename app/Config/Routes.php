@@ -60,7 +60,12 @@ $routes->get('/bloque/editar/(:num)', 'ApiController::editPlantillaBloque/$1');
 $routes->post('/bloque/editarBloque/(:num)', 'ApiController::editBloque/$1');
 $routes->get('/bloque/plantillaAumentarExistencia/(:num)', 'ApiController::plantillaAumentarExistencia/$1');
 $routes->post('/bloque/aumentarExistencia/(:num)', 'ApiController::aumentarExistencia/$1');
-
+// LOGICA EMPLEADOS
+$routes->get('/empleados', 'ApiController::getPlantillaEmpleados');
+$routes->get('/empleados/add-empleado', 'ApiController::getPlantillaAddEmpleado');
+$routes->post('/empleados/add', 'ApiController::addEmpleado');
+$routes->get('/empleados/delete/(:num)', 'ApiController::eliminarEmpleado/$1');
+$routes->get('/empleados/plantillaEditEmpleado/(:num)', 'ApiController::plantillaEditEmpleado/$1');
 //LOGICA PARA REPORTES
 $routes->get('/reportes', 'ApiController::getReportesPlantilla');
 $routes->get('/reportes/bloques_vendidos_ordenados', 'ApiController::getReporteBloquesVendidos');

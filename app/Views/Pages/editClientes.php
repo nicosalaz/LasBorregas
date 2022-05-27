@@ -60,16 +60,16 @@
                 <div class="row g-3">
                     <div class="col-md-12">
                         <label for="usuario" class="form-label">Usuario</label>
-                        <input type="text" value="<?php echo $row->usuario; ?>" class="form-control" id="usuario" name="usuario" required>
+                        <input type="text" value="<?php echo $row->nombre_usuario; ?>" class="form-control" id="usuario" name="usuario" required>
 
                     </div>
                     <div class="col-md-5">
                         <label for="contrasena" class="form-label">Clave</label>
-                        <input type="password" value="<?php echo $row->contrasena; ?>" oninput="validar()" class="form-control" id="contrasena" name="contrasena" required>
+                        <input type="password" value="<?php echo $row->clave; ?>" oninput="validar()" class="form-control" id="contrasena" name="contrasena" required>
                     </div>
                     <div class="col-md-5">
                         <label for="ReContrasena" class="form-label">Clave nuevamente</label>
-                        <input type="password" value="<?php echo $row->contrasena; ?>" required class="form-control" id="ReContrasena" name="ReContrasena" oninput="validar()">
+                        <input type="password" value="<?php echo $row->clave; ?>" required class="form-control" id="ReContrasena" name="ReContrasena" oninput="validar()">
                     </div>
                 </div>
                 <p id="resultado"></p>

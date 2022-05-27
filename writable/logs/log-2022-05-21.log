@@ -1,0 +1,31 @@
+ERROR - 2022-05-21 14:47:50 --> Cannot add or update a child row: a foreign key constraint fails (`bloquera`.`venta`, CONSTRAINT `fk_venta_empleado` FOREIGN KEY (`fk_id_empleado`) REFERENCES `empleado` (`id_empleado`))
+CRITICAL - 2022-05-21 14:47:50 --> Cannot add or update a child row: a foreign key constraint fails (`bloquera`.`venta`, CONSTRAINT `fk_venta_empleado` FOREIGN KEY (`fk_id_empleado`) REFERENCES `empleado` (`id_empleado`))
+#0 C:\xampp\htdocs\lasBorregas\system\Database\MySQLi\Connection.php(292): mysqli->query('INSERT INTO ven...', 0)
+#1 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(670): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO ven...')
+#2 C:\xampp\htdocs\lasBorregas\system\Database\BaseConnection.php(598): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO ven...')
+#3 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(25): CodeIgniter\Database\BaseConnection->query('INSERT INTO ven...')
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(159): App\Models\DetalleVenta->venta(Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-21 14:52:27 --> Undefined array key "fk_id_empleado"
+#0 C:\xampp\htdocs\lasBorregas\app\Models\DetalleVenta.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array...', 'C:\\xampp\\htdocs...', 18)
+#1 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(159): App\Models\DetalleVenta->venta(Array)
+#2 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->addVentas()
+#3 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 {main}
+CRITICAL - 2022-05-21 15:25:16 --> Undefined property: stdClass::$usuario
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\clientes.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/clientes', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(43): view('Pages/clientes', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->readClientes()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}

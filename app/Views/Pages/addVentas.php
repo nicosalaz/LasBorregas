@@ -9,11 +9,12 @@
             <div class="row g-3">
                 <div class="col-md-5">
                     <label for="fecha" class="form-label">Fecha</label>
-                    <input type="date" class="form-control" onchange="validarFecha()" id="fecha" name="fecha" required>
+                    <input type="date" class="form-control" onchange="validarFecha(id)" id="fecha" name="fecha" required>
                 </div>
                 <div class="col-md-5">
                     <label for="t_venta" class="form-label">Tipo de venta</label>
-                    <Select class="form-select" name="t_venta" id="t_venta" required>
+                    <Select class="form-select" name="t_venta" id="t_venta" onchange="validarTipoVenta()" required>
+                        <option value="">Seleccione...</option>
                         <option value="Linea">En linea</option>
                         <option value="Mostrador">Mostrador</option>
                     </Select>
@@ -25,6 +26,18 @@
                         foreach ($clientes->getResult() as $row) {
                         ?>
                             <option value="<?php echo $row->id_cliente; ?>"><?php echo  $row->cl_nombre . ' ' . $row->cl_apaterno . ' ' . $row->cl_amaterno; ?></option>
+                        <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-md-5">
+                    <label for="fk_id_empleado" class="form-label">Empleado</label>
+                    <select class="form-select" name="fk_id_empleado" id="fk_id_empleado" required>
+                        <?php
+                        foreach ($empleados as $row) {
+                        ?>
+                            <option value="<?php echo $row->id_empleado; ?>"><?php echo  $row->nombre_empleado . ' ' . $row->apellido_empleado; ?></option>
                         <?php
                         }
                         ?>

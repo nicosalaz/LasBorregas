@@ -12,7 +12,9 @@ class ApiModel extends Model
     {
         $db = db_connect(); // * Conectarse ala BD
 
-        $query = $db->query('SELECT * FROM cliente where estado = 1'); // * Ejecuta la consulta
+        $query = $db->query('SELECT *
+                            FROM cliente as c INNER JOIN usuario as u on(u.idUsuario = c.fkidusuario)
+                            WHERE c.estado = 1;'); // * Ejecuta la consulta
 
         return $query; // * Regresa al modelo el objeto $data[]
     }

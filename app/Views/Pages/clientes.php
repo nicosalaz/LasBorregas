@@ -26,7 +26,7 @@
                 <td> <?php echo $row->cl_nombre ?></td>
                 <td> <?php echo $row->cl_apaterno . ' ' . $row->cl_amaterno  ?></td>
                 <td> <?php echo $row->cl_telefono ?></td>
-                <td> <?php echo $row->usuario ?></td>
+                <td> <?php echo $row->nombre_usuario ?></td>
                 <td>
                     <a href="<?php echo base_url('/clientes/eliminar/' . $row->id_cliente); ?>"><button class="btn btn-danger">Eliminar</button></a>
                     <a href="<?php echo base_url('/clientes/editar/' . $row->id_cliente); ?>"><button class="btn btn-warning">Editar</button></a>

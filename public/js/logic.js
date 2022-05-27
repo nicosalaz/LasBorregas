@@ -231,8 +231,8 @@ function buscarPorCliente() {
     listaCliente.selectedIndex = 0;
 }
 
-function validarFecha(){
-    const fecha = document.getElementById("fecha");
+function validarFecha(x){
+    const fecha = document.getElementById(x);
     const fechaActual = new Date();
     const fechaM = new Date(fecha.value);
     if (fechaM.toLocaleDateString("es-MX") >= fechaActual.toLocaleDateString("es-MX")) {
@@ -240,4 +240,15 @@ function validarFecha(){
         fecha.value = "";
     }
 
+}
+
+function validarTipoVenta() {
+    const listaTipoVenta = document.getElementById("t_venta");
+    const tipoVenta = listaTipoVenta.options[listaTipoVenta.selectedIndex].value;
+    const listaEmpleados = document.getElementById("fk_id_empleado");
+    if (tipoVenta == "Linea") {
+        listaEmpleados.disabled = true;
+    }else{
+        listaEmpleados.disabled = false;
+    }
 }

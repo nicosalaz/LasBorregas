@@ -13,7 +13,7 @@ class VentasModel extends Model
     protected $useTimestamps     = false; # NO RELLENA POR DEFECTO LOS NULOS
     //protected $useSoftDeletes   = false;
     protected $allowedFields = [
-        'fk_id_cliente', 'fecha', 'tipo_venta', 'estado'
+        'fk_id_cliente', 'fk_id_empleado', 'fecha', 'tipo_venta', 'estado'
     ];
 
     public function obtenerVenta($usuario)
@@ -44,14 +44,18 @@ class VentasModel extends Model
         $cantidades = $data['cantidades'];
         $precios = $data['precios'];
         $fk_cliente = $data['fk_id_cliente'];
+        $fk_empleado = $data['fk_id_empleado'];
         $tipo_venta = $data['tipo_venta'];
         $fecha = $data['fecha'];
         //print_r($data['productos']);
+        if ($tipo_venta == "Linea") {
+            $fk_empleado = "5";
+        }
         $this->db->transStrict(false);
         $this->db->transStart();
 
-        $this->db->query("INSERT INTO venta (id_venta,fk_id_cliente,fecha,tipo_venta,estado) 
-                            VALUES(null,{$fk_cliente},{$fecha},{$tipo_venta},1);");
+        $this->db->query("INSERT INTO venta (id_venta,fk_id_cliente,fk_id_empleado,fecha,tipo_venta,estado) 
+                            VALUES(null,{$fk_cliente},{$fk_empleado},{$fecha},{$tipo_venta},1);");
 
         $this->db->query('SET @ID_VENTA = LAST_INSERT_ID();');
 
