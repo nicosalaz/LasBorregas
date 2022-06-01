@@ -54,7 +54,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" id="btn-comprar" form="formCarrito" class="btn btn-primary">Comprar</button>
+                <button type="submit" id="btn-comprar" form="formCarrito" class="btn btn-primary" disabled>Comprar</button>
             </div>
         </div>
     </div>

@@ -336,8 +336,9 @@ function editarCarritoCliente(x) {
         estadoCantidad = true;
         eliminarBoton.disabled = true;
     }else{
+        //alert(parseInt(cantidadEditar.value) < 0);
         //alert(stockProductos[posicion] > parseInt(cantidadEditar.value));
-        if (stockProductos[posicion] > parseInt(cantidadEditar.value)) {
+        if (stockProductos[posicion] > parseInt(cantidadEditar.value) && parseInt(cantidadEditar.value) > 0) {
             cantidadEditar.readOnly = true;
             estadoCantidad = false;
             precioNuevo.value = parseFloat(cantidadEditar.value) * parseFloat(precioUni.value);
@@ -345,6 +346,8 @@ function editarCarritoCliente(x) {
             cantidad_producto[posicion] = cantidadEditar.value;
             calcularTotal();
             eliminarBoton.disabled = false;
+        } else if(parseInt(cantidadEditar.value) <= 0){
+            alert("la cantidad debe ser positiva");
         }else{
             alert("la cantidad supera el stock del producto");
         }

@@ -4,25 +4,25 @@
 <div class="add">
     <div class="add-form">
         <?php foreach ($clientes->getResult() as $row) { ?>
-            <form action="<?php echo base_url('/clientes/editarCliente/' . $row->id_cliente); ?>" method="post" autocomplete="off">
+            <form action="<?php echo base_url('/clientes/editarCliente/' . $row->id_cliente); ?>" method="post" autocomplete="off" class="needs-validation" novalidate>
                 <h3>Datos Personales</h3>
                 <hr>
                 <div class="row g-3">
                     <div class="col-md-5">
                         <label for="nombre" class="form-label">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $row->cl_nombre; ?>" required>
+                        <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $row->cl_nombre; ?>" pattern="[a-zA-Z]+" required>
                     </div>
                     <div class="col-md-5">
                         <label for="apaterno" class="form-label">Apellido Paterno</label>
-                        <input type="text" value="<?php echo $row->cl_apaterno; ?>" class="form-control" id="apaterno" name="apaterno" required>
+                        <input type="text" value="<?php echo $row->cl_apaterno; ?>" class="form-control" id="apaterno" name="apaterno" pattern="[a-zA-Z]+" required>
                     </div>
                     <div class="col-md-5">
                         <label for="amaterno" class="form-label">Apellido materno</label>
-                        <input type="text" value="<?php echo $row->cl_amaterno; ?>" class="form-control" id="amaterno" name="amaterno" required>
+                        <input type="text" value="<?php echo $row->cl_amaterno; ?>" class="form-control" id="amaterno" name="amaterno" pattern="[a-zA-Z]+" required>
                     </div>
                     <div class="col-md-5">
                         <label for="telefono" class="form-label">Telefono</label>
-                        <input type="text" value="<?php echo $row->cl_telefono; ?>" class="form-control" id="telefono" name="telefono" required>
+                        <input type="text" value="<?php echo $row->cl_telefono; ?>" class="form-control" id="telefono" name="telefono" pattern="[0-9]{10}" min="0" maxlength="10" srequired>
                     </div>
                 </div>
                 <br>
@@ -35,11 +35,11 @@
                     </div>
                     <div class="col-md-3">
                         <label for="numb" class="form-label">Número</label>
-                        <input type="text" value="<?php echo $row->cl_numb; ?>" class="form-control" id="numb" name="numb" required>
+                        <input type="text" value="<?php echo $row->cl_numb; ?>" class="form-control" id="numb" name="numb" pattern="[0-9]+" min="0" required>
                     </div>
                     <div class="col-md-3">
                         <label for="codpostal" class="form-label">Código Postal</label>
-                        <input type="text" value="<?php echo $row->cl_codpostal; ?>" class="form-control" id="codpostal" name="codpostal" required>
+                        <input type="text" value="<?php echo $row->cl_codpostal; ?>" class="form-control" id="codpostal" min="0" pattern="[0-9]{5}" name="codpostal" required>
                     </div>
                     <div class="col-md-5">
                         <label for="colonia" class="form-label">Colonia</label>
@@ -47,11 +47,21 @@
                     </div>
                     <div class="col-md-5">
                         <label for="lugar" class="form-label">Lugar</label>
-                        <input type="text" value="<?php echo $row->cl_lugar; ?>" class="form-control" id="lugar" name="lugar" required>
+                        <select class="form-select" name="lugar" required>
+                            <?php if ($row->cl_lugar == "Casa") { ?>
+                                <option value="Casa" selected>Casa</option>
+                                <option value="Departamento">Departamento</option>
+                            <?php } else { ?>
+                                <option value="Departamento" selected>Departamento</option>
+                                <option value="Casa">Casa</option>
+
+                            <?php } ?>
+
+                        </select>
                     </div>
                     <div class="col-md-6">
                         <label for="municipio" class="form-label">Municipio</label>
-                        <input type="text" value="<?php echo $row->cl_municipio; ?>" class="form-control" id="municipio" name="municipio" required>
+                        <input type="text" value="<?php echo $row->cl_municipio; ?>" pattern="[a-zA-Z]+" class="form-control" id="municipio" name="municipio" required>
                     </div>
                 </div>
                 <br>
