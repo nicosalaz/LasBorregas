@@ -29,9 +29,9 @@
             <button class="btn btn-secondary">Ventas por cliente especifico.</button>
         </a>
     </div>
-    <div class="reporte-card">
+    <!--<div class="reporte-card">
         <button class="btn btn-secondary">Mostrar el histórico de ventas a cierto cliente</button>
-    </div>
+    </div>-->
 </div>
 
 <?php echo $this->endSection(); ?>

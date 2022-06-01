@@ -41,6 +41,7 @@
             <div class="menu">
                 <ul class="nav nav-pills">
                     <li class="nav-item"><a href="<?php echo base_url('/home'); ?>" class="nav-link" aria-current="page">Home</a></li>
+                    <!-- condicion para identificar el rol del empleado y desplegar las vistas para cada uno-->
                     <?php if (session('usuario')->fkidrol == '1') { ?>
                         <li class="nav-item"><a href="<?php echo base_url('/clientes'); ?>" class="nav-link">Clientes</a></li>
                         <li class="nav-item"><a href="<?php echo base_url('/empleados'); ?>" class="nav-link">Empleados</a></li>
@@ -48,8 +49,7 @@
                         <li class="nav-item"><a href="<?php echo base_url('/bloque'); ?>" class="nav-link">Bloques</a></li>
                         <li class="nav-item"><a href="<?php echo base_url('/reportes'); ?>" class="nav-link">Reportes</a></li>
                     <?php } elseif (session('usuario')->fkidrol == '2') { ?>
-                        <li class="nav-item"><a href="<?php echo base_url('/venta'); ?>" class="nav-link">Ventas</a></li>
-
+                        <li class="nav-item"><a href="<?php echo base_url('/empleados/agregar-venta'); ?>" class="nav-link">Ventas</a></li>
                     <?php } ?>
                     <li class="nav-item"><a href="<?php echo base_url('/vistas/nosotros'); ?>" class="nav-link">Nosotros</a></li>
                     <li class="nav-item"><a href="<?php echo base_url('/auth/logout'); ?>" class="nav-link">
@@ -57,6 +57,10 @@
                             echo session('usuario')->nombre_usuario ?? '';
                             ?>
                         </a></li>
+                    <?php if (session('usuario')->fkidrol == '3') {  ?>
+                        <li><button class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-cart-shopping"></i></button></li>
+                    <?php } ?>
+
                 </ul>
             </div>
         </div>

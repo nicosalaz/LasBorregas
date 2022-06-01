@@ -4,6 +4,9 @@ let cantidad_producto = [];
 let arrayProductos = [];
 let posTabla = 0;
 let estadoCantidad = false;
+let idsRows = [];
+let stockProductos = [];
+const arregloVentaCliente=[];
 function validar() {
     let pass = document.getElementById("contrasena").value;
     let passDos = document.getElementById("ReContrasena").value;
@@ -55,15 +58,16 @@ function addContenido() {
     if (cantidad.value < parseInt(arraySeleccionado[4])) {
         precios.push(parseFloat(cantidad.value) * parseFloat(arraySeleccionado[3]));
         cantidad_producto.push(cantidad.value);
-        item = "<td> <input type='text' class='form-control' id='pro"+posTabla+"' name='productos[]' value='"+ msj +"' readonly></td>" +
+        idsRows.push(id);
+        item = "<td> <input type='text' class='form-control' id='pro"+id+"' name='productos[]' value='"+ msj +"' readonly></td>" +
                 '<input type="text" class="form-control"name="id_prod[]" id="input' + id + '" value="'+ id +'" hidden>' +
-                '<input type="text" class="form-control"name="" id="p_unit'+posTabla+'" value="'+ p_unit +'" hidden>'+
-                "<td><input type='text' class='form-control' id='canti"+posTabla+"' name='cantidades[]' value='' readonly></td>"
-                + "<td><input type='text' class='form-control sm-2' id='price"+posTabla+"' name='precios[]' value='' readonly></td>" +
+                '<input type="text" class="form-control"name="" id="p_unit'+id+'" value="'+ p_unit +'" hidden>'+
+                "<td><input type='text' class='form-control' id='canti"+id+"' name='cantidades[]' value='' readonly></td>"
+                + "<td><input type='text' class='form-control sm-2' id='price"+id+"' name='precios[]' value='' readonly></td>" +
                 "<td> <div class='d-grid gap-2 d-md-block'> "+
-                "<button type='button' onclick='editar("+posTabla+")' class='bd-example btn btn-warning'><i class='fa-solid fa-pen-to-square'></i></button>"+
-                "<button type='button' onclick='eliminar("+posTabla+")' class='btn btn-danger'><i class='fa-solid fa-trash-can'></i></button></div></td></tr>";
-        posTabla++;
+                "<button type='button' onclick='editar("+id+")' class='bd-example btn btn-warning'><i class='fa-solid fa-pen-to-square'></i></button>"+
+                "<button type='button' onclick='eliminar("+id+")' class='btn btn-danger'><i class='fa-solid fa-trash-can'></i></button></div></td></tr>";
+        //posTabla++;
         arrayProductos.push(item);
         imprimirCarrito();
         llenarCampos();
@@ -102,18 +106,21 @@ function imprimirCarrito() {
 }
 
 function eliminar(x) {
+    let posicion = posId(x);
     const precioEliminar = document.getElementById("price"+x.toString());
-    console.log(precioEliminar.value);
-    precios.pop(x);
-    cantidad_producto.pop(x);
-    arrayProductos.pop(x);
-    console.log(precios + cantidad_producto + arrayProductos);
+    //console.log(precioEliminar.value);
+    precios.splice(posicion,1);
+    cantidad_producto.splice(posicion,1);
+    arrayProductos.splice(posicion,1);
+    idsRows.splice(posicion,1);
+    //console.log(precios + cantidad_producto + arrayProductos);
     imprimirCarrito();
     btnValidarCompra();
 
 }
 
 function editar(x) {
+    let posicion = posId(x);
     const cantidadEditar = document.getElementById("canti"+x.toString());
     const precioNuevo = document.getElementById("price"+x.toString())
     const precioUni = document.getElementById("p_unit"+x.toString())
@@ -126,8 +133,8 @@ function editar(x) {
         estadoCantidad = false;
         /*console.log(precioUni.value);*/
         precioNuevo.value = parseFloat(cantidadEditar.value) * parseFloat(precioUni.value);
-        precios[x] = precioNuevo.value;
-        cantidad_producto[x] = cantidadEditar.value;
+        precios[posicion] = precioNuevo.value;
+        cantidad_producto[posicion] = cantidadEditar.value;
         console.log(precios);
         calcularTotal();
         console.log(precio_total);
@@ -145,9 +152,11 @@ function calcularTotal() {
 }
 
 function llenarCampos() {
-    for (let index = 0; index < precios.length; index++) {
-        const precio = document.getElementById("price"+index,toString());
-        const canti = document.getElementById("canti"+index.toString())
+    /*console.log(precios);
+    console.log(cantidad_producto);*/
+    for (let index = 0; index < idsRows.length; index++) {
+        const precio = document.getElementById("price"+idsRows[index].toString());
+        const canti = document.getElementById("canti"+idsRows[index].toString())
         precio.value = parseFloat(precios[index]);
         canti.value = parseFloat(cantidad_producto[index]);
     }
@@ -235,7 +244,9 @@ function validarFecha(x){
     const fecha = document.getElementById(x);
     const fechaActual = new Date();
     const fechaM = new Date(fecha.value);
-    if (fechaM.toLocaleDateString("es-MX") >= fechaActual.toLocaleDateString("es-MX")) {
+    alert(fechaM.toLocaleDateString("es-MX") + fechaActual.toLocaleDateString("es-MX"));
+    alert(fechaM.toLocaleDateString("es-MX") < fechaActual.toLocaleDateString("es-MX"));
+    if (fechaM.toLocaleDateString("es-MX") < fechaActual.toLocaleDateString("es-MX")) {
         alert("Recuerda que la fecha debe ser menor o igual a la actual.");
         fecha.value = "";
     }
@@ -252,3 +263,130 @@ function validarTipoVenta() {
         listaEmpleados.disabled = false;
     }
 }
+
+function carritoDeCompra(id) {
+    const boton = document.getElementById(id).value;
+    //modal.innerHTML = "<p>"+boton+"</p>";
+    const arr = boton.split(",");
+    let idRow = arr[0];
+    let posicion = posId(idRow);
+    if (posicion == -1) {
+        let item = " <tr><td><input readonly class='form-control' type='text' name='prod[]' value='"+arr[1]+"' ></td>"+
+        "<td><input readonly class='form-control' type='text' id='p_unit"+idRow+"' value='"+(arr[4])+"'></td>"+
+        "<td><input readonly class='form-control' type='text'  id='price"+idRow+"' name='price[]' value='' ></td>"+
+        "<input readonly class='form-control' type='hidden' name='id[]' value='"+(arr[0])+"'>"+
+        "<td><input readonly class='form-control' type='text' id='canti"+idRow+"' name='canti[]' value=''></td>"+
+        "<td> <div class='d-grid gap-2 d-md-block'> "+
+        "<button type='button' onclick='editarCarritoCliente("+idRow+")' class='bd-example btn btn-warning'><i class='fa-solid fa-pen-to-square'></i></button>"+
+        "<button type='button' id='buttonDelete"+idRow+"' onclick='eliminarVentaCliente("+idRow+")' class='btn btn-danger'><i class='fa-solid fa-trash-can'></i></button></div></td></tr>";
+        precios.push(arr[2]*1);
+        cantidad_producto.push(1);
+        arrayProductos.push(item);
+        idsRows.push(idRow);
+        stockProductos.push(arr[3]);
+        //console.log(precios + cantidad_producto + arrayProductos + idsRows);
+        //posTabla = arrayProductos.length;
+        //console.log(posTabla);
+        imprimirCarritoDeCompra();
+    }else{
+        //alert("entro");
+        let precio_prod = precios[posicion]/cantidad_producto[posicion];
+        let newCantidad = parseInt(cantidad_producto[posicion]) + 1;
+        cantidad_producto[posicion] = parseInt(newCantidad);
+        precios[posicion] = parseFloat(precio_prod*cantidad_producto[posicion]);
+        //console.log("cantidad: "+cantidad_producto+ " precios: " + precios+ " ids: " + idsRows
+        //    +" prods: "+ arrayProductos);
+        imprimirCarritoDeCompra();
+    }
+    verificarListaDeProductos();
+}
+
+function verificarListaDeProductos() {
+    const botonComprar = document.getElementById("btn-comprar");
+    if (arrayProductos.length > 0) {
+        botonComprar.disabled = false;
+    }else{
+        botonComprar.disabled = true;
+    }
+}
+
+function imprimirCarritoDeCompra() {
+    const tableBody = document.getElementById("tableClienteBody");
+    tableBody.innerHTML="";
+    for (let index = 0; index < arrayProductos.length; index++) {
+        tableBody.innerHTML += arrayProductos[index]
+    }
+    llenarCamposCliente();
+    calcularTotal();
+}
+
+function editarCarritoCliente(x) {
+    const posicion = posId(x);
+    //console.log(posicion);
+    const cantidadEditar = document.getElementById("canti"+x.toString());
+    const precioNuevo = document.getElementById("price"+x.toString());
+    const precioUni = document.getElementById("p_unit"+x.toString());
+    const eliminarBoton = document.getElementById("buttonDelete"+x.toString());
+    const total = document.getElementById('total');
+    //console.log(cantidadEditar.value);
+    //console.log(precioNuevo.value);
+    //console.log(precioUni.value);
+    if (!estadoCantidad) {
+        cantidadEditar.readOnly = false;
+        estadoCantidad = true;
+        eliminarBoton.disabled = true;
+    }else{
+        //alert(stockProductos[posicion] > parseInt(cantidadEditar.value));
+        if (stockProductos[posicion] > parseInt(cantidadEditar.value)) {
+            cantidadEditar.readOnly = true;
+            estadoCantidad = false;
+            precioNuevo.value = parseFloat(cantidadEditar.value) * parseFloat(precioUni.value);
+            precios[posicion] = precioNuevo.value;
+            cantidad_producto[posicion] = cantidadEditar.value;
+            calcularTotal();
+            eliminarBoton.disabled = false;
+        }else{
+            alert("la cantidad supera el stock del producto");
+        }
+    }
+}
+
+function eliminarVentaCliente(x) {
+    let posicion = posId(x);
+    const precioEliminar = document.getElementById("price"+x.toString());
+    //console.log(precioEliminar.value);
+    precios.splice(posicion,1);
+    cantidad_producto.splice(posicion,1);
+    arrayProductos.splice(posicion,1);
+    idsRows.splice(posicion,1);
+    posTabla = arrayProductos.length;
+    //console.log("debe agregar en: "+posTabla);
+    //console.log(precios + cantidad_producto + arrayProductos);
+    imprimirCarritoDeCompra();
+    verificarListaDeProductos();
+}
+
+function posId(idRow) {
+    let estado = false;
+    let contador = 0;
+    let posicion = -1;
+    while (contador < idsRows.length && estado == false) {
+        if (idRow == idsRows[contador]) {
+            estado = true;
+            posicion = contador;
+        }
+        contador++;
+    }
+    return posicion;
+}
+function llenarCamposCliente() {
+    /*console.log(precios);
+    console.log(cantidad_producto);*/
+    for (let index = 0; index < idsRows.length; index++) {
+        const precio = document.getElementById("price"+idsRows[index].toString());
+        const canti = document.getElementById("canti"+idsRows[index].toString());
+        precio.value = parseFloat(precios[index]).toString();
+        canti.value = parseFloat(cantidad_producto[index]).toString();
+    }
+}
+

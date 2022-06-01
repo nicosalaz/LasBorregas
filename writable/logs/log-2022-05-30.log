@@ -1,0 +1,21 @@
+CRITICAL - 2022-05-30 18:01:46 --> Undefined variable $bloques
+#0 C:\xampp\htdocs\lasBorregas\app\Views\Pages\addVentaEmpleado.php(29): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined varia...', 'C:\\xampp\\htdocs...', 29)
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#2 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#3 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/addVentaE...', Array, true)
+#4 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(214): view('Pages/addVentaE...', Array)
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->plantillaAddVentaEmpleado()
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#7 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2022-05-30 18:03:45 --> Call to a member function getResult() on array
+#0 C:\xampp\htdocs\lasBorregas\system\View\View.php(210): include()
+#1 C:\xampp\htdocs\lasBorregas\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#2 C:\xampp\htdocs\lasBorregas\system\Common.php(1089): CodeIgniter\View\View->render('Pages/addVentaE...', Array, true)
+#3 C:\xampp\htdocs\lasBorregas\app\Controllers\ApiController.php(217): view('Pages/addVentaE...', Array)
+#4 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(825): App\Controllers\ApiController->plantillaAddVentaEmpleado()
+#5 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(412): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\ApiController))
+#6 C:\xampp\htdocs\lasBorregas\system\CodeIgniter.php(320): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#7 C:\xampp\htdocs\lasBorregas\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#8 {main}

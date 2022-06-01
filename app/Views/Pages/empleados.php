@@ -32,7 +32,6 @@
                 <td>
                     <a href="<?php echo base_url('/empleados/delete/' . $row->id_empleado); ?>"><button class="btn btn-danger">Eliminar</button></a>
                     <a href="<?php echo base_url('/empleados/plantillaEditEmpleado/' . $row->id_empleado); ?>"><button class="btn btn-warning">Editar</button></a>
-                    <a href="<?php echo base_url(); ?>"><button class="btn btn-info">Mostrar</button></a>
                 </td>
             </tr>
         <?php

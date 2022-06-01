@@ -4,7 +4,7 @@
 <div class="add">
     <div class="add-form">
         <?php foreach ($empleado as $rowEmpleado) { ?>
-            <form action="<?php echo base_url('/empleados/add'); ?>" method="post" autocomplete="off" class="needs-validation" novalidate>
+            <form action="<?php echo base_url('/empleados/edit-empleado/' . $rowEmpleado->id_empleado); ?>" method="post" autocomplete="off" class="needs-validation" novalidate>
                 <h3>Datos Personales</h3>
                 <hr>
                 <div class="row g-3">

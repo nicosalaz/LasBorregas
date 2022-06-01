@@ -37,6 +37,34 @@ class VentasModel extends Model
         $db = db_connect();
         $query = "SELECT id_cliente from venta where id_venta = " . $id;
     }
+
+    public function ventaEmpleado($data)
+    {
+        $objBloque = new BloqueModel();
+        $productos = $data['id_prod'];
+        $cantidades = $data['cantidades'];
+        $precios = $data['precios'];
+        $fk_cliente = $data['fk_id_cliente'];
+        $this->db->transStrict(false);
+        $this->db->transStart();
+
+        $this->db->query("INSERT INTO venta (id_venta,fk_id_cliente,fk_id_empleado,fecha,tipo_venta,total,estado) 
+                            VALUES(null,{$fk_cliente},{$data['id_empleado']},'{$data['fecha']}',
+                            '{$data['tipo_venta']}',{$data['total']},1);");
+
+        $this->db->query('SET @ID_VENTA = LAST_INSERT_ID();');
+
+        for ($i = 0; $i < count($productos); $i++) {
+            $this->db->query("INSERT INTO detalle_venta_bloque
+                                (id_det_vta_blq,fk_id_bloque,fk_id_venta,cantidad,precio_venta)
+                                 VALUES (null,{$productos[$i]},@ID_VENTA,{$cantidades[$i]},{$precios[$i]});");
+            $objBloque->setStockProduct($productos[$i], $cantidades[$i]);
+        }
+        $this->db->transComplete();
+
+        return $this->db->transStatus();
+    }
+
     public function venta($data)
     {
         $objBloque = new BloqueModel();
@@ -87,7 +115,6 @@ class VentasModel extends Model
         $query =    "SELECT b.id_bloque as id, b.blq_nombre as nombre,b.blq_tamano as tamano ,SUM(dvb.cantidad) as sumatoria
                         FROM venta as v INNER JOIN detalle_venta_bloque as dvb ON (v.id_venta =dvb.fk_id_venta)
                         INNER JOIN bloque as b on (b.id_bloque = dvb.fk_id_bloque)
-                        WHERE v.estado = 1
                         GROUP by b.id_bloque
                         ORDER BY sumatoria DESC; ";
         $data = $db->query($query);
@@ -103,9 +130,7 @@ WHERE v.estado = 1;
         $db = db_connect(); // * Conectarse ala BD
 
         $query = $db->query("SELECT v.id_venta,c.cl_nombre,c.id_cliente, v.fecha, v.tipo_venta, v.total
-                            FROM venta as v INNER JOIN cliente as c on(c.id_cliente = v.fk_id_cliente) 
-                            WHERE v.estado = 1
-                            and c.estado = 1;"); // * Ejecuta la consulta
+                            FROM venta as v INNER JOIN cliente as c on(c.id_cliente = v.fk_id_cliente) ;"); // * Ejecuta la consulta
 
         return $query; // * Regresa al modelo el objeto $data[]
     }

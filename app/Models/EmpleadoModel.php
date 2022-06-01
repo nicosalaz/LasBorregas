@@ -64,12 +64,12 @@ class EmpleadoModel extends Model
 
     public function editEmpleado($data)
     {
-        $query = $this->db->query("SELECT fkidusuario 
+        $query = $this->db->query("SELECT fkiduser
                                     from empleado 
                                     where id_empleado = {$data['id_empleado']}");
         $idUsuario = 0;
         foreach ($query->getResult() as $row) {
-            $idUsuario = $row->fkidusuario;
+            $idUsuario = $row->fkiduser;
         }
 
         //print_r($data['productos']);
@@ -78,15 +78,15 @@ class EmpleadoModel extends Model
 
         $this->db->query("UPDATE usuario SET nombre_usuario = '{$data['nombre_usuario']}',
                                 clave = '{$data['contrasena']}'
-                            WHERE idUsuario = {$data['']}");
+                            WHERE idUsuario = {$idUsuario}");
 
         $this->db->query('SET @ID_USUARIO = LAST_INSERT_ID();');
 
-        $this->db->query("INSERT INTO empleado(nombre_empleado,apellido_empleado,fecha_ingreso,
-                            fecha_egreso,telefono,estado_actividad,fkidrol,fkiduser) 
-                            VALUES('{$data['nombre_empleado']}','{$data['apellido_empleado']}',
-                                    '{$data['fecha_ingreso']}',null,'{$data['telefono']}',1,
-                                    '{$data['fkidrol']}',@ID_USUARIO);");
+        $this->db->query("UPDATE empleado SET nombre_empleado = '{$data['nombre_empleado']}'
+                                            ,apellido_empleado = '{$data['apellido_empleado']}',
+                                            fecha_ingreso = '{$data['fecha_ingreso']}',
+                                            telefono = '{$data['telefono']}'
+                                            WHERE id_empleado = {$data['id_empleado']}");
 
         $this->db->transComplete();
 

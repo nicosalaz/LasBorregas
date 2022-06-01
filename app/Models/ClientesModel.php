@@ -66,8 +66,6 @@ class ClientesModel extends Model
 
         $query = $db->query("SELECT c.id_cliente as id,c.cl_nombre as nombre,COUNT(v.fk_id_cliente) as sumatoria 
                             FROM venta as v INNER JOIN cliente as c ON (v.fk_id_cliente= c.id_cliente) 
-                            WHERE v.estado = 1 
-                            AND c.estado = 1 
                             GROUP by c.id_cliente 
                             ORDER BY sumatoria DESC;"); // * Ejecuta la consulta
 
@@ -75,8 +73,6 @@ class ClientesModel extends Model
     }
     public function addCliente($data)
     {
-
-
         //print_r($data['productos']);
         $this->db->transStrict(true);
         $this->db->transStart();
@@ -121,6 +117,33 @@ class ClientesModel extends Model
                         cl_municipio='{$data['cl_municipio']}',cl_telefono='{$data['cl_telefono']}',
                         estado = 1
                         WHERE id_cliente = {$data['id_cliente']}");
+        $this->db->transComplete();
+
+        return $this->db->transStatus();
+    }
+
+    public function ventaCliente($data)
+    {
+        $objBloque = new BloqueModel();
+        $productos = $data['id'];
+        $cantidades = $data['canti'];
+        $precios = $data['price'];
+        //print_r($data['productos']);
+        $this->db->transStrict(true);
+        $this->db->transStart();
+
+        $this->db->query("INSERT INTO venta (fk_id_cliente,fk_id_empleado,fecha,tipo_venta,total,estado) 
+                            VALUES({$data['id_cliente']},{$data['id_empleado']},'{$data['fecha']}',
+                            '{$data['tipoVenta']}','{$data['total']}',1);");
+
+        $this->db->query('SET @ID_VENTA = LAST_INSERT_ID();');
+
+        for ($i = 0; $i < count($productos); $i++) {
+            $this->db->query("INSERT INTO detalle_venta_bloque
+                                (fk_id_bloque,fk_id_venta,cantidad,precio_venta)
+                                 VALUES ({$productos[$i]},@ID_VENTA,{$cantidades[$i]},{$precios[$i]});");
+            $objBloque->setStockProduct($productos[$i], $cantidades[$i]);
+        }
         $this->db->transComplete();
 
         return $this->db->transStatus();

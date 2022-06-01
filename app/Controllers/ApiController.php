@@ -128,6 +128,28 @@ class ApiController extends BaseController
         $data['detalles'] = $ventas->getDetalleVenta($id);
         return view("Pages/getDetalleVentaCliente", $data);
     }
+
+    public function ventaCliente()
+    {
+        $clienteModel = new ClientesModel();
+        $data = $this->request->getPost();
+        date_default_timezone_set("America/New_York");
+        $fecha = date("Y-m-d");
+        $data['id_cliente'] = session("usuario")->id_cliente;
+        $data['tipoVenta'] = "Linea";
+        $data['id_empleado'] = 3;
+        $data['fecha'] = $fecha;
+        $result = $clienteModel->ventaCliente($data);
+        if ($result === false) {
+            session()->setFlashdata("error", "No se pudo Agregar");
+        } else {
+            session()->setFlashdata("success", 'Agregado');
+        }
+        return redirect()->to(base_url('/home'));
+        //print_r($data);
+
+    }
+
     // *===================================INICIO DE VENTAS=========================================================================
     // *===================================INICIO DE VENTAS=========================================================================
     public function readVentas()
@@ -205,6 +227,40 @@ class ApiController extends BaseController
 
         return view("Pages/editVenta", $resultado);
     }
+
+    public function plantillaAddVentaEmpleado()
+    {
+        $clientesModel = new ClientesModel();
+        $bloqueModelo = new BloqueModel();
+        $clientesModel->where("estado = ", 1);
+        $data['clientes'] = $clientesModel->findAll();
+        $bloqueModelo->where("estado =", 1);
+        $data['bloques'] = $bloqueModelo->findAll();
+        return view("Pages/addVentaEmpleado", $data);
+    }
+
+    public function addVentaEmpleado()
+    {
+        $ventaModel = new VentasModel();
+        date_default_timezone_set("America/New_York");
+        $fecha = date("Y-m-d");
+        $tipo_venta = "Mostrador";
+        $id_empleado = session("usuario")->id_empleado;
+        $data = $this->request->getPost();
+        $data['fecha'] = $fecha;
+        $data['tipo_venta'] = $tipo_venta;
+        $data['id_empleado'] = $id_empleado;
+        //print_r($data);
+        $resultado = $ventaModel->ventaEmpleado($data);
+        if ($resultado === false) {
+            session()->setFlashdata("error", "No se pudo Agregar");
+        } else {
+            session()->setFlashdata("success", 'Agregado');
+        }
+        return redirect()->to(base_url('/empleados/agregar-venta'));
+    }
+
+
     // ===================================INICIO DE BLOQUE=========================================================================
     public function readBloque()
     {
@@ -374,22 +430,19 @@ class ApiController extends BaseController
     public function editEmpleado($id)
     {
         $empleadoModel = new EmpleadoModel();
-        $rolModel = new RolModel();
-        $data['empleado'] = $empleadoModel->select("*")
-            ->join("usuario", "usuario.idUsuario = empleado.fkiduser")
-            ->join("rol", "rol.id_rol = empleado.fkidrol")
-            ->where("id_empleado =", $id)
-            ->find();
-        foreach ($data['empleado'] as $key) {
-            $rol = $key->fkidrol;
+        $data = $this->request->getPost();
+        $data['id_empleado'] = $id;
+        //print_r($data);
+        $resultado = $empleadoModel->editEmpleado($data);
+        if ($resultado === false) {
+            session()->setFlashdata("error", "No se pudo Actualizar");
+        } else {
+            session()->setFlashdata("success", 'Actualizado');
         }
-        $data['roles'] = $rolModel->where([
-            "nombre_rol != " => 'CLIENTE',
-            "id_rol !=" => $rol
-        ])
-            ->findAll();
-        return view("Pages/editEmpleado", $data);
+        return redirect()->to(base_url('/empleados'));
     }
+
+
 
     //########################################### REPORTES ###########################################
     public function getReportesPlantilla()
@@ -419,7 +472,6 @@ class ApiController extends BaseController
         $ventaModel = new VentasModel();
         $clienteModel = new ClientesModel();
         $data['ventasPorCliente'] = $ventaModel->ventasPorFecha();
-        $clienteModel->where('estado', 1);
         $data['clientes'] = $clienteModel->findAll();
         return view('Pages/ventasPorCliente', $data);
     }

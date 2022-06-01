@@ -45,6 +45,7 @@ $routes->get('/clientes/editar/(:num)', 'ApiController::editPlantilla/$1');
 $routes->post('/clientes/editarCliente/(:num)', 'ApiController::editCliente/$1');
 $routes->get('/clientes/getVentaCliente/(:num)', 'ApiController::getVentaCliente/$1');
 $routes->get('/clientes/getDetalleVenta/(:num)', 'ApiController::getDetalleVenta/$1');
+$routes->post('/clientes/venta-cliente', 'ApiController::ventaCliente');
 //LOGICA DE VENTAS
 $routes->get('/venta', 'ApiController::readVentas');
 $routes->get('/venta/eliminar/(:num)', 'ApiController::deleteVenta/$1');
@@ -66,6 +67,9 @@ $routes->get('/empleados/add-empleado', 'ApiController::getPlantillaAddEmpleado'
 $routes->post('/empleados/add', 'ApiController::addEmpleado');
 $routes->get('/empleados/delete/(:num)', 'ApiController::eliminarEmpleado/$1');
 $routes->get('/empleados/plantillaEditEmpleado/(:num)', 'ApiController::plantillaEditEmpleado/$1');
+$routes->get('/empleados/agregar-venta', 'ApiController::plantillaAddVentaEmpleado');
+$routes->post('/empleados/add-venta', 'ApiController::addVentaEmpleado');
+$routes->post('/empleados/edit-empleado/(:num)', 'ApiController::editEmpleado/$1');
 //LOGICA PARA REPORTES
 $routes->get('/reportes', 'ApiController::getReportesPlantilla');
 $routes->get('/reportes/bloques_vendidos_ordenados', 'ApiController::getReporteBloquesVendidos');
