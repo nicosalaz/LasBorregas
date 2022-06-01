@@ -3,7 +3,7 @@
 <?php echo $this->section('contenido'); ?>
 
 <div class="twoHeader">
-    <h4>Tabla clientes</h4>
+    <h4>Tabla Clientes</h4>
     <a href="<?php echo base_url('/vistas/addClientes'); ?>"><button class="btn btn-primary">Agregar Cliente</button></a>
 </div>
 <table class="table table-hover" id="tablaClientes" name="tablaClientes">
